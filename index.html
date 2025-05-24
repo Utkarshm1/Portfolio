@@ -149,19 +149,39 @@
       color: #1abc9c;
     }
   </style>
+  <script>
+    function filterProjects(category) {
+      const categories = document.querySelectorAll('.project-category');
+      categories.forEach(cat => {
+        cat.style.display = cat.classList.contains(category) ? 'block' : 'none';
+      });
+    }
+    function showModal(content) {
+      document.getElementById("modal").style.display = "block";
+      document.getElementById("modal-body").innerHTML = content;
+    }
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+    window.onclick = function(event) {
+      const modal = document.getElementById("modal");
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
 </head>
 <body>
-
 <header>
   <h1>Utkarsh Mishra</h1>
   <p>MS in Business Analytics and Artificial Intelligence</p>
-  <p>mishra.utkarsh018@gmail.com</p>
+  <p>Email: mishra.utkarsh018@gmail.com</p>
   <p>I turn data into decisions and intelligence into impact—while bridging the gap between tech minds and everyday users.</p>
 </header>
 
 <nav>
   <ul>
-    <li><a href="#about">About Me</a></li>
+    <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#resume">Resume</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -171,8 +191,8 @@
 
 <section id="about">
   <h2>About Me</h2>
-  <img src="IMG_3709 2.jpg" alt="Utkarsh Mishra Graduation" class="section-image">
-  <p>With a balance of strategy, empathy, and AI, I make complex systems simple, useful, and human. I specialize in blending data storytelling with machine learning, crafting solutions that empower business stakeholders and technical teams alike.</p>
+  <img src="https://raw.githubusercontent.com/Utkarshm1/Portfolio/main/IMG_3709_2.jpg" alt="Utkarsh Mishra Graduation" class="section-image">
+  <p style="font-size: 18px; line-height: 1.6;">With a balance of strategy, empathy, and AI, I make complex systems simple, useful, and human. I specialize in blending data storytelling with machine learning, crafting solutions that empower business stakeholders and technical teams alike. My strength lies in bridging technical implementation with real-world business impact.</p>
 </section>
 
 <section id="projects">
@@ -184,40 +204,25 @@
     <button onclick="filterProjects('db')">Database</button>
   </div>
   <div class="project-category ai active">
-    <div class="project" onclick="showModal('<h3>DashAI</h3><p><strong>Workflow:</strong> Data Pipeline → Model Inference → SHAP/LIME Explanation → Dashboard Output</p><p><strong>Methodology:</strong> Integrated XAI + BI insights + clustering</p><p><strong>Tech Used:</strong> Python, Streamlit, SHAP, LIME, BERT</p>')">• DashAI</div>
-    <div class="project" onclick="showModal('<h3>AI Referee Evaluation System</h3><p><strong>Workflow:</strong> Webcam/Audio Input → NLP Q&A → Emotion Analysis → Score Prediction</p><p><strong>Methodology:</strong> Fair-play AI referee model</p><p><strong>Tech Used:</strong> OpenCV, TensorFlow, PyTorch</p>')">• AI Referee Evaluation System</div>
-</div>
-
-<div class="project-category analytics">
-    <div class="project" onclick="showModal('<h3>Inventory Forecasting Engine</h3><p><strong>Workflow:</strong> Sales Input → Regression Modeling → Stock Forecast → Alert System</p><p><strong>Methodology:</strong> Predictive modeling + anomaly detection</p><p><strong>Tech Used:</strong> Python, Pandas, Streamlit</p>')">• Inventory Forecasting Engine</div>
-</div>
-
-<div class="project-category martech">
-    <div class="project" onclick="showModal('<h3>ElecKart Marketing Mix Model</h3><p><strong>Workflow:</strong> Campaign Data → Attribution Analysis → ROI Simulation</p><p><strong>Methodology:</strong> MMM + regression optimization</p><p><strong>Tech Used:</strong> Python, Power BI</p>')">• ElecKart Marketing Mix Model</div>
-    <div class="project" onclick="showModal('<h3>FIFA Sentiment Analysis</h3><p><strong>Workflow:</strong> Tweets → BERT Sentiment → Dashboard Summary</p><p><strong>Methodology:</strong> Token classification using pre-trained BERT</p><p><strong>Tech Used:</strong> Python, BERT, Streamlit</p>')">• FIFA Sentiment Analysis</div>
-</div>
-
-<div class="project-category db">
-    <div class="project" onclick="showModal('<h3>Cloud-Based Streaming Pipelines</h3><p><strong>Workflow:</strong> Azure Event Hubs → Synapse → Snowflake → Visualization</p><p><strong>Methodology:</strong> Stream processing with modern lakehouse</p><p><strong>Tech Used:</strong> Azure, Snowflake, Cosmos DB</p>')">• Cloud-Based Streaming Pipelines</div>
-</div>
-
-<div id="modal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <div id="modal-body"></div>
+    <div class="project" onclick="showModal('<img src=\"https://raw.githubusercontent.com/Utkarshm1/Portfolio/main/ChatGPT%20Image%20May%2021%2C%202025%2C%2002_37_03%20PM.png\" style=\"max-width:100%;margin-bottom:15px;\"><h3>DashAI</h3><p><strong>Workflow:</strong> Data Pipeline → Model Inference → SHAP/LIME Explanation → Dashboard Output</p><p><strong>Tech Used:</strong> Python, Streamlit, SHAP, LIME, BERT</p>')">• DashAI</div>
+    <div class="project" onclick="showModal('<img src=\"https://raw.githubusercontent.com/Utkarshm1/Portfolio/main/ChatGPT%20Image%20May%2021%2C%202025%2C%2005_00_21%20PM.png\" style=\"max-width:100%;margin-bottom:15px;\"><h3>AI Referee Evaluation</h3><p><strong>Workflow:</strong> Webcam Input → Emotion Detection → Decision Feedback</p><p><strong>Tech Used:</strong> OpenCV, TensorFlow, SpeechRecognition</p>')">• AI Referee Evaluation</div>
   </div>
-</div>
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div id="modal-body"></div>
+    </div>
+  </div>
 </section>
 
 <section id="resume">
   <h2>Resume</h2>
   <ul>
-    <li><strong>Business Projects IT Intern – UT System:</strong> Boosted KPI reporting speed by 18%, improved anomaly detection by 30%.</li>
-    <li><strong>Business Analyst – Webcraft IT:</strong> Enhanced delivery precision by 12% and SLA compliance by 22%.</li>
-    <li><strong>Financial Analyst Intern – TCS:</strong> Conducted financial analysis for 20+ clients using Oracle GL.</li>
+    <li><strong>Business Projects IT Intern – UT System:</strong> Created and maintained real-time dashboards to track KPIs and project metrics; presented performance insights to leadership for strategy optimization and forecasting decisions.</li>
+    <li><strong>Business Analyst – Webcraft IT:</strong> Identified gaps and revenue opportunities in B2B accounts, conducted stakeholder interviews, and facilitated requirement gathering for tech enablement and process improvement.</li>
+    <li><strong>Financial Analyst Intern – TCS:</strong> Performed financial audits and reporting for over 20 clients using Oracle GL; collaborated with account managers to deliver data-driven insights for enterprise-level clients.</li>
   </ul>
   <p><a href="Resume_Utkarsh_Mishra.pdf" download>📄 Download My Latest Resume (PDF)</a></p>
-  <p><a href="utkarsh-portfolio.pdf" download>⬇️ Download Printable Portfolio (PDF)</a></p>
 </section>
 
 <section id="contact">
