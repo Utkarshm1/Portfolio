@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Utkarsh Mishra | Portfolio</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f5f5f5; color: #333; }
+    header { background-color: #2c3e50; color: white; padding: 20px; text-align: center; }
+    nav ul { list-style: none; padding: 0; display: flex; justify-content: center; background: #34495e; margin: 0; }
+    nav li { margin: 0 15px; }
+    nav a { color: white; text-decoration: none; padding: 10px 0; display: inline-block; }
+    section { padding: 40px 20px; max-width: 1000px; margin: auto; background: white; margin-bottom: 20px; border-radius: 8px; }
+    h2 { color: #2c3e50; }
+    .project-category { margin-top: 20px; }
+    .project { margin: 10px 0; cursor: pointer; color: #2980b9; text-decoration: underline; }
+    footer { text-align: center; padding: 20px; background: #2c3e50; color: white; }
+    .section-image { width: 100%; max-height: 250px; object-fit: cover; border-radius: 10px; margin-bottom: 20px; }
+    iframe { width: 100%; height: 400px; border: none; border-radius: 10px; margin-top: 20px; }
+    .filter-tabs { display: flex; gap: 10px; margin: 20px 0; flex-wrap: wrap; }
+    .filter-tabs button { padding: 8px 16px; border: none; background: #3498db; color: white; border-radius: 5px; cursor: pointer; }
+    .filter-tabs button:hover { background: #2980b9; }
+    .project-category { display: none; }
+    .project-category.active { display: block; }
+    .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); }
+    .modal-content { background-color: #fff; margin: 10% auto; padding: 20px; border: 1px solid #888; width: 80%; border-radius: 10px; }
+    .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
+    .close:hover, .close:focus { color: black; text-decoration: none; cursor: pointer; }
+  </style>
+  <script>
+    function filterProjects(category) {
+      const categories = document.querySelectorAll('.project-category');
+      categories.forEach(cat => {
+        if (cat.classList.contains(category)) {
+          cat.classList.add('active');
+        } else {
+          cat.classList.remove('active');
+        }
+      });
+    }
+
+    function showModal(content) {
+      document.getElementById("modal").style.display = "block";
+      document.getElementById("modal-body").innerHTML = content;
+    }
+
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById("modal");
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+</head>
+<body>
+
+<header>
+  <h1>Utkarsh Mishra</h1>
+  <p>MS in Business Analytics and Artificial Intelligence</p>
+  <p>mishra.utkarsh018@gmail.com</p>
+  <p>I turn data into decisions and intelligence into impact—while bridging the gap between tech minds and everyday users.</p>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#about">About Me</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#resume">Resume</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#blog">Blog</a></li>
+  </ul>
+</nav>
+
+<section id="about">
+  <h2>About Me</h2>
+  <img src="IMG_3709 2.jpg" alt="Utkarsh Mishra Graduation" class="section-image">
+  <p>With a balance of strategy, empathy, and AI, I make complex systems simple, useful, and human. I specialize in blending data storytelling with machine learning, crafting solutions that empower business stakeholders and technical teams alike.</p>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="filter-tabs">
+    <button onclick="filterProjects('ai')">AI & Tech</button>
+    <button onclick="filterProjects('analytics')">Analytics</button>
+    <button onclick="filterProjects('martech')">Martech</button>
+    <button onclick="filterProjects('db')">Database</button>
+  </div>
+
+  
+  <div class="project" onclick="showModal('<img src=\"ChatGPT Image May 21, 2025, 02_37_03 PM.png\" style=\"max-width:100%;margin-bottom:15px;\"><h3>DashAI</h3><p><strong>Workflow:</strong> Data Pipeline → Model Inference → SHAP/LIME Explanation → Dashboard Output</p><p><strong>Methodology:</strong> Integrated XAI + BI insights + clustering</p><p><strong>Tech Used:</strong> Python, Streamlit, SHAP, LIME, BERT</p>')">• DashAI</div>
+  <div class="project" onclick="showModal('<img src=\"ChatGPT Image May 21, 2025, 04_13_10 PM.png\" style=\"max-width:100%;margin-bottom:15px;\"><h3>NLP-Based Security & Threat Detection</h3><p><strong>Workflow:</strong> Real-time chat monitoring → anomaly detection → transformer-based NLP summarization</p><p><strong>Methodology:</strong> BERT-based threat analysis with context awareness</p><p><strong>Tech Used:</strong> Python, Hugging Face Transformers, Flask</p>')">• NLP-Based Security & Threat Detection</div>
+
+  <div class="project" onclick="showModal('<img src=\"ChatGPT Image May 21, 2025, 02_43_09 PM.png\" style=\"max-width:100%;margin-bottom:15px;\"><h3>FreeSpeech</h3><p><strong>Workflow:</strong> Audio input → Speech-to-Text → Translation API → Word2Vec Refinement → Text-to-Speech</p><p><strong>Methodology:</strong> End-to-end multilingual translation pipeline</p><p><strong>Tech Used:</strong> Python, Google Speech API, HuggingFace, Word2Vec</p>')">• FreeSpeech</div>
+
+  <div class="project" onclick="showModal('<img src=\"ChatGPT Image May 21, 2025, 02_48_06 PM.png\" style=\"max-width:100%;margin-bottom:15px;\"><h3>GeminiLLM-NLP</h3><p><strong>Workflow:</strong> Query Ingestion → Classification → Inference Logs → BigQuery Dashboard</p><p><strong>Methodology:</strong> Real-time classification and context mapping with Gemini LLM</p><p><strong>Tech Used:</strong> Google BigQuery, Python, Gemini API</p>')">• GeminiLLM-NLP</div>
+
+  <div class="project" onclick="showModal('<img src=\"ChatGPT Image May 21, 2025, 05_00_21 PM.png\" style=\"max-width:100%;margin-bottom:15px;\"><h3>AI Referee Evaluation System</h3><p><strong>Workflow:</strong> Webcam/Audio Input → NLP Q&A → Emotion Analysis → Score Prediction</p><p><strong>Methodology:</strong> Real-time fair-play analysis for referee bias detection</p><p><strong>Tech Used:</strong> OpenCV, TensorFlow, PyTorch, SpeechRecognition</p>')">• AI Referee Evaluation System</div>
+
+  <div class="project" onclick="showModal('<img src=\"ChatGPT Image May 21, 2025, 05_04_04 PM.png\" style=\"max-width:100%;margin-bottom:15px;\"><h3>YOLO-based Object Detection</h3><p><strong>Workflow:</strong> Camera Feed → Frame Splitting → YOLOv5 Inference → Object Position Output</p><p><strong>Methodology:</strong> Real-time self-driving simulation detection</p><p><strong>Tech Used:</strong> YOLOv5, OpenCV, PyTorch</p>')">• YOLO-based Object Detection</div>
+</div>
+</div>
+    <div class="project" onclick="showModal('<img src=\"ChatGPT%20Image%20May%2021,%202025,%2002_43_09%20PM.png\" style=\"max-width:100%;margin-bottom:15px;\"><br>A multilingual real-time voice translation tool using HuggingFace, Word2Vec, and Google TTS.')">• FreeSpeech</div>
+    <div class="project" onclick="showModal('<img src=\"ChatGPT%20Image%20May%2021,%202025,%2002_48_06%20PM.png\" style=\"max-width:100%;margin-bottom:15px;\"><br>A BigQuery-based scalable NLP inference pipeline using Gemini LLM.')">• GeminiLLM-NLP</div>
+    <div class="project" onclick="showModal('<img src=\"ChatGPT%20Image%20May%2021,%202025,%2005_00_21%20PM.png\" style=\"max-width:100%;margin-bottom:15px;\"><br>Emotion detection and multi-turn audio Q&A for fair referee assessment using video + NLP.')">• AI Referee Evaluation System</div>
+    <div class="project" onclick="showModal('<img src=\"ChatGPT%20Image%20May%2021,%202025,%2005_04_04%20PM.png\" style=\"max-width:100%;margin-bottom:15px;\"><br>YOLOv5-powered real-time object detection model for autonomous driving simulation.')">• YOLO-based Object Detection</div>
+  </div>
+
+  
+    <div class="project" onclick="showModal('<img src=\"ChatGPT%20Image%20May%2021,%202025,%2007_20_14%20PM.png\" style=\"max-width:100%;margin-bottom:15px;\"><br>Designed an ETL pipeline using Azure Synapse, Snowflake, and Cosmos DB to enable real-time analytics dashboards.')">• Cloud-Based Streaming Pipelines</div>
+  </div>
+
+  <div class="project-category martech">
+    <div class="project" onclick="showModal('<img src=\"ChatGPT Image May 21, 2025, 07_18_00 PM.png\" style=\"max-width:100%;margin-bottom:15px;\"><h3>ElecKart Marketing Mix Optimization</h3><p><strong>Workflow:</strong> Campaign Attribution → Spend Allocation Model → Performance Forecast → ROI Dashboard</p><p><strong>Methodology:</strong> Linear regression with cross-channel attribution logic</p><p><strong>Tech Used:</strong> Python, Power BI, Excel</p>')">• ElecKart Marketing Mix Optimization</div>
+
+    <div class="project" onclick="showModal('<img src=\"ChatGPT Image May 21, 2025, 04_09_07 PM.png\" style=\"max-width:100%;margin-bottom:15px;\"><h3>Sentiment Analysis on FIFA World Cup</h3><p><strong>Workflow:</strong> Tweet Scraping → BERT Sentiment Labeling → Emotion Mapping → Dashboard Summary</p><p><strong>Methodology:</strong> Token classification via pre-trained BERT + Emoji correlation</p><p><strong>Tech Used:</strong> Python, BERT, Hugging Face, Streamlit</p>')">• Sentiment Analysis on FIFA World Cup</div>
+
+    <div class="project" onclick="showModal('<img src=\"ChatGPT Image May 21, 2025, 04_13_10 PM.png\" style=\"max-width:100%;margin-bottom:15px;\"><h3>Instacart Market Basket Analysis</h3><p><strong>Workflow:</strong> Order History → Transaction Matrix → XGBoost Modeling → Product Recommendations</p><p><strong>Methodology:</strong> Basket association mining + predictive uplift</p><p><strong>Tech Used:</strong> Alteryx, Python, XGBoost, Excel</p>')">• Instacart Market Basket Analysis</div>
+
+    <div class="project" onclick="showModal('<img src=\"ChatGPT Image May 21, 2025, 07_12_13 PM.png\" style=\"max-width:100%;margin-bottom:15px;\"><h3>Keyword Gap Analytics Engine</h3><p><strong>Workflow:</strong> Crawl SERP Keywords → Match with GA Data → Gap Scoring → Dashboard Reporting</p><p><strong>Methodology:</strong> Gap index calculation with business-weighted scoring</p><p><strong>Tech Used:</strong> Python, dbt, SQL, Google Search Console</p>')">• Keyword Gap Analytics Engine</div>
+  </div>
+
+  <div class="project-category db">
+    <div class="project" onclick="showModal('<img src=\"ChatGPT Image May 21, 2025, 07_20_14 PM.png\" style=\"max-width:100%;margin-bottom:15px;\"><h3>Multi-Store Inventory Tracker</h3><p><strong>Workflow:</strong> Product Input → Stock Monitoring → ETA Estimation → Dashboard Visualization</p><p><strong>Methodology:</strong> SQL-based schema design with real-time alerts</p><p><strong>Tech Used:</strong> MySQL, Python Flask, Power BI</p>')">• Multi-Store Inventory Tracker</div>
+
+    <div class="project" onclick="showModal('<img src=\"ChatGPT Image May 21, 2025, 07_12_13 PM.png\" style=\"max-width:100%;margin-bottom:15px;\"><h3>Inventory Forecasting Engine</h3><p><strong>Workflow:</strong> Sales Input → Transformation → Regression Forecasting → Stock Threshold Monitoring</p><p><strong>Methodology:</strong> Linear regression + anomaly flagging</p><p><strong>Tech Used:</strong> Python, Pandas, Streamlit</p>')">• Inventory Forecasting Engine</div>
+
+    <div class="project" onclick="showModal('<img src=\"ChatGPT Image May 21, 2025, 07_20_14 PM.png\" style=\"max-width:100%;margin-bottom:15px;\"><h3>Cloud-Based Streaming Pipelines</h3><p><strong>Workflow:</strong> Event Hubs → Azure Synapse → Cosmos DB → Snowflake → Dashboard Sync</p><p><strong>Methodology:</strong> Streaming-first ETL with lakehouse architecture</p><p><strong>Tech Used:</strong> Azure Synapse, Event Hubs, Snowflake, Cosmos DB</p>')">• Cloud-Based Streaming Pipelines</div>
+  </div>
+
+  <div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<section id="blog">
+  <h2>Blog</h2>
+  <p>🧠 <strong>Demystifying Explainable AI:</strong> A guide to SHAP, LIME & model transparency.</p>
+  <p>📈 <strong>Marketing Mix Modeling:</strong> What CMOs should know in the AI era.</p>
+  <p>💬 <strong>Real-Time Translation Systems:</strong> Building multilingual systems that work.</p>
+  <p>🚗 <strong>Object Detection in Self-Driving Cars:</strong> Combining YOLO and CNNs for smarter movement.</p>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <p><strong>University of Texas at Dallas</strong><br>MS in Business Analytics and Artificial Intelligence<br><em>Aug 2023 – May 2025</em><br>Relevant Coursework: Data Science, Machine Learning, Cloud Computing, Data Visualization</p>
+
+  <p><strong>Xavier University, Bhubaneswar</strong> — Bachelors in Business Management (Marketing Honors)<br>
+  <em>2015 – 2018</em></p>
+</section>
+
+
+  <ul>
+    <li><strong>Business Projects IT Intern – UT System:</strong> Boosted KPI reporting speed by 18%, improved anomaly detection by 30%.</li>
+    <li><strong>Business Analyst – Webcraft IT:</strong> Enhanced delivery precision by 12% and SLA compliance by 22%.</li>
+    <li><strong>Financial Analyst Intern – TCS:</strong> Conducted financial analysis for 20+ clients using Oracle GL.</li>
+  </ul>
+  <p><a href="Resume_Utkarsh_Mishra.pdf" download>📄 Download My Latest Resume (PDF)</a></p>
+  <p><a href="utkarsh-portfolio.pdf" download>⬇️ Download Printable Portfolio (PDF)</a></p>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <img src="https://images.unsplash.com/photo-1581092918383-6c2b064a2604?auto=format&fit=crop&w=1000&q=80" alt="Contact Section" class="section-image">
+  <p>Email: mishra.utkarsh018@gmail.com</p>
+  <p>LinkedIn: <a href="https://www.linkedin.com/in/utkarsh-mishra-a37193160" target="_blank">utkarsh-mishra</a></p>
+  <p>GitHub: <a href="https://github.com/Utkarshm1" target="_blank">Utkarshm1</a></p>
+</section>
+
+<footer>
+  <p>© 2025 Utkarsh Mishra. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
