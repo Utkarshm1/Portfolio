@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Utkarsh Mishra | Analytics Engineer</title>
-  <meta name="description" content="Utkarsh Mishra — Analytics Engineer | Decision Intelligence & Data Systems. Portfolio of decision systems, analytics engineering, and AI-integrated BI." />
+  <meta name="description" content="Utkarsh Mishra | Analytics Engineer specializing in decision intelligence, AI evaluation, analytics engineering, and executive-ready data systems." />
 
   <style>
     :root{
@@ -159,10 +159,18 @@
       transition:transform .12s ease, border-color .12s ease, background .12s ease;
       cursor:pointer;
     }
+    .proj[hidden]{display:none}
     .proj:hover{
       transform: translateY(-2px);
       border-color: rgba(138,180,255,.35);
       background: rgba(138,180,255,.06);
+    }
+    .proj .preview{
+      margin-top:12px;
+      padding-top:10px;
+      border-top:1px dashed rgba(255,255,255,.08);
+      color:var(--muted2);
+      font-size:12px;
     }
     .proj .title{
       display:flex; align-items:flex-start; justify-content:space-between; gap:10px;
@@ -197,6 +205,174 @@
       color:var(--muted);
       font-size:13px;
     }
+    .toolbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:14px;
+      flex-wrap:wrap;
+    }
+    .chip-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+    .chip{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:var(--muted);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:12px;
+      cursor:pointer;
+      transition:background .14s ease, border-color .14s ease, color .14s ease, transform .14s ease;
+    }
+    .chip:hover,
+    .chip.active{
+      color:var(--text);
+      border-color:rgba(138,180,255,.35);
+      background:rgba(138,180,255,.10);
+      transform:translateY(-1px);
+    }
+    .chip.active{
+      box-shadow:0 0 0 1px rgba(138,180,255,.08) inset;
+    }
+    .statline{
+      color:var(--muted2);
+      font-size:12px;
+    }
+    .timeline{
+      display:grid;
+      gap:12px;
+    }
+    .timeline-item{
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:rgba(255,255,255,.02);
+      overflow:hidden;
+      transition:border-color .14s ease, background .14s ease;
+    }
+    .timeline-item:hover{
+      border-color:rgba(138,180,255,.24);
+      background:rgba(255,255,255,.03);
+    }
+    .timeline-toggle{
+      width:100%;
+      background:none;
+      border:0;
+      color:var(--text);
+      text-align:left;
+      padding:16px 18px;
+      cursor:pointer;
+    }
+    .timeline-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:16px;
+    }
+    .timeline-summary{
+      color:var(--muted);
+      font-size:13px;
+      margin-top:6px;
+      max-width:52ch;
+    }
+    .timeline-meta{
+      color:var(--muted2);
+      font-size:12px;
+      white-space:nowrap;
+      text-align:right;
+    }
+    .timeline-icon{
+      font-size:18px;
+      color:var(--accent);
+      transition:transform .14s ease;
+    }
+    .timeline-item.open .timeline-icon{
+      transform:rotate(45deg);
+    }
+    .timeline-body{
+      display:none;
+      padding:0 18px 18px;
+    }
+    .timeline-item.open .timeline-body{
+      display:block;
+    }
+    .timeline-item:hover .timeline-summary,
+    .timeline-item.open .timeline-summary{
+      color:var(--text);
+    }
+    .timeline-item:hover .timeline-meta,
+    .timeline-item.open .timeline-meta,
+    .timeline-item:hover span[style*="color:var(--muted)"],
+    .timeline-item.open span[style*="color:var(--muted)"]{
+      color:var(--muted2) !important;
+    }
+    .timeline-item.open .bullets li{
+      color:var(--text);
+    }
+    .skill-grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:12px;
+    }
+    @media (max-width: 860px){
+      .skill-grid{grid-template-columns:1fr}
+    }
+    .skill-card{
+      appearance:none;
+      -webkit-appearance:none;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px;
+      background:rgba(255,255,255,.02);
+      color:var(--text);
+      text-align:left;
+      cursor:pointer;
+      transition:border-color .14s ease, background .14s ease, transform .14s ease;
+    }
+    .skill-card:hover,
+    .skill-card.active{
+      border-color:rgba(138,180,255,.35);
+      background:rgba(138,180,255,.08);
+      transform:translateY(-1px);
+    }
+    .skill-card h3{
+      margin:0 0 8px;
+      font-size:14px;
+    }
+    .skill-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .skill-card .mini{
+      margin-top:10px;
+      color:var(--muted2);
+      font-size:12px;
+    }
+    .skill-card:hover h3,
+    .skill-card.active h3,
+    .skill-card:hover p,
+    .skill-card.active p{
+      color:var(--text);
+    }
+    .skill-card:hover .mini,
+    .skill-card.active .mini{
+      color:#d9e6ff;
+    }
+    .contact-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:12px;
+    }
+    .note{
+      color:var(--muted2);
+      font-size:12px;
+      min-height:18px;
+    }
     .footer{
       margin-top:36px;
       padding-top:14px;
@@ -217,10 +393,10 @@
     }
     .modal{
       width:min(860px, 100%);
-      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(15,22,36,.98), rgba(12,19,32,.96));
+      border:1px solid rgba(138,180,255,.18);
       border-radius:18px;
-      box-shadow:0 18px 50px rgba(0,0,0,.55);
+      box-shadow:0 22px 60px rgba(0,0,0,.72);
       padding:18px;
       position:relative;
       max-height: 85vh;
@@ -237,12 +413,17 @@
       font-size:16px;
     }
     .modal .close:hover{border-color:rgba(138,180,255,.35); background:rgba(138,180,255,.10)}
-    .modal h3{margin:0 0 6px 0}
-    .modal p{margin:10px 0; color:var(--muted)}
+    .modal h3{margin:0 0 6px 0; color:#f7fbff}
+    .modal p{margin:10px 0; color:#eaf2ff}
     .modal .meta{
       display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 12px;
     }
-    .modal .meta .pill{background:rgba(0,0,0,.16)}
+    .modal .meta .pill{
+      background:rgba(138,180,255,.10);
+      border-color:rgba(138,180,255,.22);
+      color:#eef5ff;
+    }
+    .modal .bullets li{color:#eef5ff}
     .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;}
   </style>
 </head>
@@ -263,6 +444,7 @@
         <a href="#security">AI Security</a>
         <a href="#systems">Additional Systems</a>
         <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -275,7 +457,7 @@
       <div class="card">
         <h1>Analytics Engineer<br/>Decision Intelligence & Data Systems</h1>
         <p class="subtitle">
-          I build decision-ready analytics systems that combine clean data modeling, KPI governance, and AI-enabled automation to reduce decision latency and improve business outcomes.
+          I design analytics and AI systems that turn ambiguous business questions into decision-ready models, dashboards, and evaluation workflows. My work sits at the intersection of data engineering, executive reporting, predictive modeling, and AI risk validation.
         </p>
 
         <div class="pillrow">
@@ -287,7 +469,7 @@
         </div>
 
         <div class="cta">
-          <a class="btn primary" href="www.linkedin.com/in/utkarsh-mishra-a37193160" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn primary" href="https://www.linkedin.com/in/utkarsh-mishra-a37193160/" target="_blank" rel="noreferrer">LinkedIn</a>
           <a class="btn" href="https://github.com/Utkarshm1" target="_blank" rel="noreferrer">GitHub</a>
           <a class="btn" href="resume1.pdf" target="_blank" rel="noreferrer">Download Resume</a>
           <button class="btn" onclick="document.getElementById('featured').scrollIntoView({behavior:'smooth'});">View Work</button>
@@ -296,10 +478,10 @@
 
       <div class="card">
         <div class="quick">
-          <div class="kv"><span>Location</span><b>Dallas, TX (Open to Remote/Hybrid)</b></div>
-          <div class="kv"><span>Focus</span><b>Decision Intelligence • Analytics Engineering</b></div>
-          <div class="kv"><span>Core Stack</span><b>SQL • Python • Power BI • Snowflake/Azure</b></div>
-          <div class="kv"><span>AI Exposure</span><b>Forecasting • NLP • SHAP • RAG Evaluation</b></div>
+          <div class="kv"><span>Location</span><b>Dallas, TX, USA • Open to Remote/Hybrid</b></div>
+          <div class="kv"><span>Focus</span><b>Decision Intelligence • Analytics Engineering • AI Evaluation</b></div>
+          <div class="kv"><span>Core Stack</span><b>SQL • Python • Power BI • Snowflake • Azure</b></div>
+          <div class="kv"><span>AI Exposure</span><b>Forecasting • NLP • SHAP • RAG • Red/Blue Teaming</b></div>
           <div class="kv"><span>Profile</span><b>5+ years experience</b></div>
         </div>
         <div class="line"></div>
@@ -309,6 +491,7 @@
             <li>Reduced decision turnaround time by <b>25–30%</b> via automated analytics pipelines and predictive dashboards.</li>
             <li>Improved conversion performance by <b>17%</b> through regression-based budget optimization and scenario modeling.</li>
             <li>Increased sales productivity by <b>30%</b> by leading CRM implementation and reporting modernization.</li>
+            <li>Delivered nearly <b>$25K annual cost savings</b> through workflow redesign and data-backed process optimization.</li>
           </ul>
         </div>
       </div>
@@ -319,8 +502,8 @@
       <h2>About</h2>
       <div class="card">
         <p style="margin:0; color:var(--muted); font-size:15px;">
-          I’m an Analytics Engineer focused on <b style="color:var(--text);">decision intelligence</b> — building reliable data models, KPI frameworks, and AI-enabled analytics layers that support measurable business outcomes.
-          My work bridges business context and technical execution across SQL, BI, cloud platforms, and applied modeling, with emphasis on transparency, governance, and operational usability.
+          I’m an Analytics Engineer focused on <b style="color:var(--text);">decision intelligence</b>, building scalable analytics systems, KPI frameworks, and AI-enabled workflows that improve decision speed, trust, and operational clarity.
+          My background spans executive dashboarding, predictive modeling, ELT design, RAG system evaluation, and analytics modernization across healthcare, manufacturing, IT, and business operations. I care about making advanced systems practical: interpretable for stakeholders, reliable in production, and tightly aligned to measurable business outcomes.
         </p>
       </div>
     </div>
@@ -328,23 +511,34 @@
     <!-- FEATURED -->
     <div class="section" id="featured">
       <h2>Featured Systems</h2>
+      <div class="toolbar">
+        <div class="chip-row" id="projectFilters">
+          <button class="chip active" type="button" data-filter="all">All Work</button>
+          <button class="chip" type="button" data-filter="ai">AI Systems</button>
+          <button class="chip" type="button" data-filter="analytics">Analytics</button>
+          <button class="chip" type="button" data-filter="trust">Trust & Security</button>
+          <button class="chip" type="button" data-filter="decision">Decision Models</button>
+        </div>
+        <div class="statline" id="projectCount">Showing 4 featured systems</div>
+      </div>
       <div class="grid">
-        <div class="proj" onclick="openProject('dashai')">
+        <div class="proj" data-tags="ai analytics decision" onclick="openProject('dashai')">
           <div class="title">
-            <h3>DashAI – AI-Enabled Decision Intelligence Platform</h3>
+            <h3>DashAI | AI-Enabled Decision Intelligence Platform</h3>
             <span class="tag">Flagship</span>
           </div>
           <div class="stack mono">(Python • Streamlit • XGBoost • SHAP • Prophet • NLP • Power BI)</div>
           <ul class="bullets">
-            <li>Unified forecasting, clustering, NLP analysis, and explainability into a decision layer.</li>
-            <li>Automated insight workflows, reducing manual analysis cycles by <b>30%</b>.</li>
-            <li>Delivered scenario-oriented executive dashboards for decision-making.</li>
+            <li>Unified forecasting, clustering, NLP analysis, and explainability into one modular decision layer.</li>
+            <li>Automated insight generation across marketing, financial, and operational datasets, cutting manual analysis cycles by <b>30%</b>.</li>
+            <li>Delivered scenario-oriented dashboards that made model outputs usable for executive decision workflows.</li>
           </ul>
+          <div class="preview">Click to open the deeper project breakdown.</div>
         </div>
 
-        <div class="proj" onclick="openProject('eleckart')">
+        <div class="proj" data-tags="analytics decision" onclick="openProject('eleckart')">
           <div class="title">
-            <h3>ElecKart – Marketing Decision Optimization Engine</h3>
+            <h3>ElecKart | Marketing Decision Optimization Engine</h3>
             <span class="tag">Impact</span>
           </div>
           <div class="stack mono">(Python • SQL • Regression Modeling • Scenario Simulation • Power BI)</div>
@@ -353,24 +547,26 @@
             <li>Improved conversion performance by <b>17%</b>; projected ~<b>12%</b> ROI uplift.</li>
             <li>Converted model outputs into KPI-aligned budget recommendations.</li>
           </ul>
+          <div class="preview">Click to explore the modeling and scenario design choices.</div>
         </div>
 
-        <div class="proj" onclick="openProject('amireal')">
+        <div class="proj" data-tags="ai trust security" onclick="openProject('amireal')">
           <div class="title">
-            <h3>AMIREAL – Data Integrity & Media Verification Infrastructure</h3>
+            <h3>AMIREAL | Data Integrity & Media Verification Infrastructure</h3>
             <span class="tag">Trust</span>
           </div>
           <div class="stack mono">(Python • Cryptographic Hashing • Metadata Validation • Streamlit)</div>
           <ul class="bullets">
-            <li>Implemented tamper-evident hashing for media asset verification.</li>
-            <li>Built metadata validation pipeline to support integrity and auditability.</li>
-            <li>Created a verification UI for authenticity comparison workflows.</li>
+            <li>Implemented tamper-evident hashing to create immutable fingerprints for media asset verification.</li>
+            <li>Built metadata extraction and validation checks to support integrity, auditability, and governance.</li>
+            <li>Created a verification UI for authenticity comparison workflows and future synthetic media extensions.</li>
           </ul>
+          <div class="preview">Click to view the trust architecture and verification workflow.</div>
         </div>
 
-        <div class="proj" onclick="openProject('tco')">
+        <div class="proj" data-tags="analytics decision" onclick="openProject('tco')">
           <div class="title">
-            <h3>Data Center TCO – Distributed vs Monolithic Cost Modeling</h3>
+            <h3>Data Center TCO | Distributed vs Monolithic Cost Modeling</h3>
             <span class="tag">Decision Model</span>
           </div>
           <div class="stack mono">(Power BI • Excel • SQL • Cost Modeling)</div>
@@ -379,6 +575,7 @@
             <li>Built executive dashboards to compare cost drivers and savings levers.</li>
             <li>Packaged findings into decision-ready recommendations.</li>
           </ul>
+          <div class="preview">Click to inspect the scenario framing and trade-off analysis.</div>
         </div>
       </div>
     </div>
@@ -388,15 +585,18 @@
       <h2>AI Security & Infrastructure</h2>
       <div class="card">
         <ul class="bullets">
-          <li>Evaluated retrieval-augmented generation (RAG) systems for prompt injection vulnerabilities and access-control boundary enforcement.</li>
-          <li>Implemented a dual-instance AWS setup separating GPU inference from application services to improve isolation and scalability.</li>
-          <li>Deployed containerized AI services using Docker in sandboxed environments to support controlled testing and model evaluation.</li>
+          <li>Designed and executed AI model evaluation workflows for chatbots, RAG systems, and agentic AI to surface prompt injection and retrieval-layer vulnerabilities.</li>
+          <li>Built red-team / blue-team validation frameworks to simulate real-world attack scenarios and assess model robustness.</li>
+          <li>Evaluated system behavior across retrieval and generation layers to uncover access-control gaps, security blind spots, and boundary failures.</li>
+          <li>Implemented a dual-instance AWS setup separating GPU inference from application services to improve isolation, scalability, and operational resilience.</li>
+          <li>Deployed containerized AI services using Docker in sandboxed environments to support controlled testing and repeatable model evaluation.</li>
         </ul>
         <div class="line"></div>
         <div class="list-inline">
           <span>Focus Areas:</span>
           <span>RAG evaluation</span>
           <span>• Prompt injection testing</span>
+          <span>• Red/blue-team workflows</span>
           <span>• Model/service isolation</span>
           <span>• Containerized deployments</span>
         </div>
@@ -412,11 +612,12 @@
           <span>• Market Basket Optimization</span>
           <span>• Time-Series Inventory Forecasting</span>
           <span>• Event-Driven Streaming Pipelines (Azure)</span>
-          <span>• Scalable LLM Inference (BigQuery)</span>
-          <span>• Adaptive Scoring Systems</span>
+          <span>• GeminiLLM-NLP</span>
+          <span>• AI Referee Evaluation System</span>
           <span>• Healthcare Distribution Analytics</span>
           <span>• Keyword Gap & SEO Performance Analytics</span>
           <span>• CRM Reporting Modernization</span>
+          <span>• Data Center TCO Optimization</span>
         </div>
       </div>
     </div>
@@ -425,41 +626,135 @@
     <div class="section" id="experience">
       <h2>Experience</h2>
       <div class="card">
-        <div style="margin-bottom:12px;">
-          <b>Cognitive Sprints AI LLC</b> — <span style="color:var(--muted)">Data Strategy Intern (Full-Time)</span><br/>
-          <span style="color:var(--muted2); font-size:13px;">Dallas, TX (Remote) • Jul 2025 – Present</span>
-          <ul class="bullets">
-            <li>Delivered analytics and AI initiatives translating ambiguous requirements into scalable data models, KPI architectures, and decision automation layers.</li>
-            <li>Designed executive dashboards and predictive models (SQL, Python, Power BI), reducing decision turnaround by <b>25–30%</b>.</li>
-            <li>Built automated ELT pipelines improving reporting reliability, governance, and metric standardization.</li>
-            <li>Contributed to RAG evaluation and red/blue-team validation workflows for robustness and access-control integrity.</li>
-          </ul>
-        </div>
+        <div class="timeline">
+          <div class="timeline-item open">
+            <button class="timeline-toggle" type="button">
+              <div class="timeline-head">
+                <div>
+                  <b>Cognitive Sprints AI</b> <span style="color:var(--muted)">| AI Strategy Intern</span>
+                  <div class="timeline-summary">AI systems, evaluation workflows, red/blue-team testing, KPI frameworks, and deployment support.</div>
+                </div>
+                <div>
+                  <div class="timeline-meta">Dallas, TX</div>
+                  <div class="timeline-meta">Aug 2025 – Present</div>
+                  <div class="timeline-icon">+</div>
+                </div>
+              </div>
+            </button>
+            <div class="timeline-body">
+              <ul class="bullets">
+                <li>Designed and deployed AI-driven analytics systems and executive dashboards, reducing decision turnaround time by <b>25–30%</b>.</li>
+                <li>Built scalable ELT pipelines and KPI frameworks, improving data reliability and cross-team metric standardization.</li>
+                <li>Translated ambiguous business problems into structured data models and decision automation workflows across manufacturing, healthcare, and IT domains.</li>
+                <li>Designed and executed AI model evaluation workflows for chatbots, RAG-based systems, and agentic AI, identifying prompt injection risks and retrieval-layer vulnerabilities.</li>
+                <li>Built red-team / blue-team validation frameworks to simulate real-world attack scenarios and assess model robustness.</li>
+                <li>Evaluated system behavior across retrieval and generation layers, uncovering access-control gaps and security blind spots.</li>
+                <li>Supported deployment of containerized AI services across sandbox and GPU environments, contributing to inference routing and system orchestration.</li>
+              </ul>
+            </div>
+          </div>
 
+          <div class="timeline-item">
+            <button class="timeline-toggle" type="button">
+              <div class="timeline-head">
+                <div>
+                  <b>University of Texas System</b> <span style="color:var(--muted)">| Projects IT Intern</span>
+                  <div class="timeline-summary">Enterprise BI dashboards, KPI governance, monitoring workflows, and forecasting support.</div>
+                </div>
+                <div>
+                  <div class="timeline-meta">Richardson, TX</div>
+                  <div class="timeline-meta">Jun 2024 – Aug 2024</div>
+                  <div class="timeline-icon">+</div>
+                </div>
+              </div>
+            </button>
+            <div class="timeline-body">
+              <ul class="bullets">
+                <li>Architected and deployed <b>5+</b> enterprise Power BI dashboards across <b>50K+</b> operational records, strengthening KPI governance and reporting consistency.</li>
+                <li>Established real-time performance monitoring workflows, enabling leadership to proactively address operational bottlenecks and optimize resource allocation.</li>
+                <li>Developed predictive threshold forecasting models to flag deficit work-hour risk trends, supporting early intervention and capacity planning decisions.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <button class="timeline-toggle" type="button">
+              <div class="timeline-head">
+                <div>
+                  <b>Webcraft IT</b> <span style="color:var(--muted)">| Business Data Analyst</span>
+                  <div class="timeline-summary">Dashboard modernization, CRM implementation, cross-functional analytics, and process optimization.</div>
+                </div>
+                <div>
+                  <div class="timeline-meta">Indore, India</div>
+                  <div class="timeline-meta">Jul 2019 – Jul 2023</div>
+                  <div class="timeline-icon">+</div>
+                </div>
+              </div>
+            </button>
+            <div class="timeline-body">
+              <ul class="bullets">
+                <li>Designed and scaled executive analytics dashboards in Power BI and Tableau, translating operational and customer datasets into structured decision frameworks for leadership.</li>
+                <li>Led cross-functional analytics initiatives across five teams, standardizing reporting workflows and reducing project delivery delays by <b>12.5%</b>.</li>
+                <li>Directed end-to-end CRM implementation, covering requirements, configuration, and reporting architecture, increasing sales productivity by <b>30%</b>.</li>
+                <li>Identified workflow inefficiencies using data-driven process analysis, delivering nearly <b>$25K</b> in annual cost savings and reducing customer complaints by <b>20%</b>.</li>
+                <li>Facilitated stakeholder workshops to translate business objectives into system-level data specifications for digital transformation initiatives.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <button class="timeline-toggle" type="button">
+              <div class="timeline-head">
+                <div>
+                  <b>Tata Consultancy Services (TCS)</b> <span style="color:var(--muted)">| Financial Analyst Intern</span>
+                  <div class="timeline-summary">Financial reporting support, Oracle GL workflows, and enterprise dataset validation.</div>
+                </div>
+                <div>
+                  <div class="timeline-meta">Mumbai, India</div>
+                  <div class="timeline-meta">May 2017 – Jun 2017</div>
+                  <div class="timeline-icon">+</div>
+                </div>
+              </div>
+            </button>
+            <div class="timeline-body">
+              <ul class="bullets">
+                <li>Analyzed financial performance across <b>20+</b> corporate entities, evaluating revenue trends and cost structures to support senior stakeholder reporting.</li>
+                <li>Used Oracle GL and enterprise reporting tools to extract, reconcile, and validate financial datasets.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="section" id="skills">
+      <h2>Technical Skills</h2>
+      <div class="card">
+        <div class="skill-grid" id="skillGrid">
+          <button class="skill-card active" type="button" data-skill="analytics">
+            <h3>Analytics Engineering</h3>
+            <p>Dimensional modeling, data warehousing, ELT/ETL design, KPI governance, and reporting architecture.</p>
+            <div class="mini">SQL • Snowflake • Azure Synapse • Data Factory</div>
+          </button>
+          <button class="skill-card" type="button" data-skill="bi">
+            <h3>Business Intelligence</h3>
+            <p>Executive dashboards, decision-ready reporting, RLS-aware modeling, and stakeholder-facing insights.</p>
+            <div class="mini">Power BI • DAX • Tableau • KPI design</div>
+          </button>
+          <button class="skill-card" type="button" data-skill="ml">
+            <h3>AI & Modeling</h3>
+            <p>Forecasting, regression modeling, explainability, NLP workflows, and retrieval-aware AI evaluation.</p>
+            <div class="mini">XGBoost • Prophet • SHAP • BERT • RAG</div>
+          </button>
+          <button class="skill-card" type="button" data-skill="infra">
+            <h3>Platforms & Deployment</h3>
+            <p>Cloud data platforms, containerized services, API integrations, and multi-service environments.</p>
+            <div class="mini">AWS • Databricks • BigQuery • Docker • Uvicorn</div>
+          </button>
+        </div>
         <div class="line"></div>
-
-        <div style="margin-bottom:12px;">
-          <b>The University of Texas System</b> — <span style="color:var(--muted)">IT Special Projects Intern (Analytics & BI)</span><br/>
-          <span style="color:var(--muted2); font-size:13px;">Dallas, TX • Jun 2024 – Aug 2024</span>
-          <ul class="bullets">
-            <li>Architected 5+ Power BI dashboards across 50K+ operational records, strengthening KPI reliability and reporting consistency.</li>
-            <li>Established operational performance monitoring workflows to surface bottlenecks and optimize resource allocation.</li>
-            <li>Developed predictive threshold forecasting models to flag deficit work-hour risk patterns for early intervention.</li>
-          </ul>
-        </div>
-
-        <div class="line"></div>
-
-        <div>
-          <b>WebCraft IT</b> — <span style="color:var(--muted)">Business Analyst – Data & Decision Systems</span><br/>
-          <span style="color:var(--muted2); font-size:13px;">Indore, India • Jul 2019 – Jul 2023</span>
-          <ul class="bullets">
-            <li>Designed executive dashboards translating operational and customer data into structured decision insights for leadership.</li>
-            <li>Led cross-functional analytics initiatives across five teams, reducing delivery delays by <b>12.5%</b>.</li>
-            <li>Directed CRM implementation (requirements → reporting architecture), increasing sales productivity by <b>30%</b>.</li>
-            <li>Delivered ~$<b>25K</b> annual cost savings through workflow optimization and data-driven process redesign.</li>
-          </ul>
-        </div>
+        <div class="note" id="skillNote">Highlighting analytics engineering because it anchors the rest of the portfolio.</div>
       </div>
     </div>
 
@@ -471,9 +766,13 @@
         <span style="color:var(--muted)">M.S. Business Analytics & Artificial Intelligence</span>
         <span style="color:var(--muted2); font-size:13px;"> • Aug 2023 – May 2025</span>
         <div class="line"></div>
-        <b class="mono">Xavier Institute of Management</b><br/>
-        <span style="color:var(--muted)">B.S. in Business Management</span>
-        <span style="color:var(--muted2); font-size:13px;"> • Year – Year</span>
+        <b>International Institute of Information Technology</b><br/>
+        <span style="color:var(--muted)">Executive PG in Data Science</span>
+        <span style="color:var(--muted2); font-size:13px;"> • May 2020 – May 2021</span>
+        <div class="line"></div>
+        <b class="mono">Xavier Institute of Management, Bhubaneswar</b><br/>
+        <span style="color:var(--muted)">Bachelor of Business Management (Marketing Honors)</span>
+        <span style="color:var(--muted2); font-size:13px;"> • Apr 2016 – Apr 2019</span>
       </div>
     </div>
 
@@ -483,12 +782,17 @@
       <div class="card">
         <div class="list-inline">
           <span>Email: <a href="mailto:mishra.utkarsh018@gmail.com">mishra.utkarsh018@gmail.com</a></span>
-          <span>• LinkedIn: <a href="www.linkedin.com/in/utkarsh-mishra-a37193160" target="www.linkedin.com/in/utkarsh-mishra-a37193160" rel="noreferrer">Profile</a></span>
-          <span>• GitHub: <a href="https://github.com/Utkarshm1" target="https://github.com/Utkarshm1" rel="noreferrer">Repos</a></span>
+          <span>• LinkedIn: <a href="https://www.linkedin.com/in/utkarsh-mishra-a37193160/" target="_blank" rel="noreferrer">Profile</a></span>
+          <span>• GitHub: <a href="https://github.com/Utkarshm1" target="_blank" rel="noreferrer">Repos</a></span>
         </div>
+        <div class="contact-actions">
+          <button class="btn" type="button" id="copyEmailBtn">Copy Email</button>
+          <button class="btn" type="button" onclick="document.getElementById('featured').scrollIntoView({behavior:'smooth'});">Jump to Projects</button>
+        </div>
+        <div class="note" id="contactNote"></div>
         <div class="line"></div>
         <div style="color:var(--muted); font-size:13px;">
-          If you’re hiring for Analytics Engineering / Decision Intelligence roles, I’m happy to share deeper write-ups or walkthroughs for the featured systems.
+          If you’re hiring for analytics engineering, decision intelligence, BI, or AI evaluation roles, I’m happy to share deeper walkthroughs of the featured systems and implementation details.
         </div>
       </div>
     </div>
@@ -510,13 +814,14 @@
   <script>
     const PROJECTS = {
       dashai: {
-        title: "DashAI – AI-Enabled Decision Intelligence Platform",
+        title: "DashAI | AI-Enabled Decision Intelligence Platform",
         stack: ["Python","Streamlit","XGBoost","Prophet","SHAP","NLP","Power BI"],
         summary: "A modular decision intelligence system combining forecasting, segmentation, NLP analysis, and explainability to support scenario-driven business decisions.",
         bullets: [
-          "Integrated predictive modeling and explainability into a unified workflow to make model outputs interpretable for stakeholders.",
-          "Automated insight generation to reduce repetitive manual analysis and improve consistency of reporting outputs.",
-          "Designed outputs to be decision-ready: KPI-oriented dashboards, scenario views, and clear drivers behind predictions."
+          "Architected an end-to-end workflow spanning ingestion, feature engineering, forecasting, NLP analysis, and SHAP-based explainability.",
+          "Automated insight generation across financial, operational, and marketing datasets to reduce repetitive manual analysis.",
+          "Designed decision-ready dashboards with KPI views, scenario comparisons, and interpretable drivers behind predictions.",
+          "Structured the platform for extensibility across forecasting, segmentation, and recommendation use cases."
         ],
         links: [
           { label: "GitHub (optional)", url: "YOUR_DASHAI_GITHUB" },
@@ -524,7 +829,7 @@
         ]
       },
       eleckart: {
-        title: "ElecKart – Marketing Decision Optimization Engine",
+        title: "ElecKart | Marketing Decision Optimization Engine",
         stack: ["Python","SQL","Regression Modeling","Power BI","Scenario Simulation"],
         summary: "A marketing analytics system that quantifies channel impact and supports budget allocation decisions through scenario simulation.",
         bullets: [
@@ -537,20 +842,20 @@
         ]
       },
       amireal: {
-        title: "AMIREAL – Data Integrity & Media Verification Infrastructure",
+        title: "AMIREAL | Data Integrity & Media Verification Infrastructure",
         stack: ["Python","Cryptographic Hashing","Metadata Validation","Streamlit"],
         summary: "A tamper-evident verification system for digital assets using file hashing and metadata validation to support integrity and auditability.",
         bullets: [
-          "Implemented hashing-based fingerprints for integrity checks and comparison workflows.",
-          "Built metadata validation checks to surface inconsistencies and improve auditability signals.",
-          "Created a basic verification UI to support practical verification and demonstration."
+          "Implemented cryptographic hashing to generate immutable fingerprints for file-level integrity validation.",
+          "Built metadata extraction and validation checks to surface structural inconsistencies and strengthen auditability.",
+          "Created a verification interface for authenticity comparison workflows and future synthetic-media detection extensions."
         ],
         links: [
           { label: "GitHub (optional)", url: "YOUR_AMIREAL_GITHUB" }
         ]
       },
       tco: {
-        title: "Data Center TCO – Distributed vs Monolithic Cost Modeling",
+        title: "Data Center TCO | Distributed vs Monolithic Cost Modeling",
         stack: ["Power BI","Excel","SQL","Cost Modeling"],
         summary: "A decision model comparing operating factors and total cost of ownership under different infrastructure deployment strategies.",
         bullets: [
@@ -562,6 +867,12 @@
           { label: "Dashboard (optional)", url: "YOUR_TCO_LINK" }
         ]
       }
+    };
+    const SKILL_NOTES = {
+      analytics: "Highlighting analytics engineering because it anchors the rest of the portfolio.",
+      bi: "Business intelligence here is about making complex systems legible for leaders and operators.",
+      ml: "This layer shows where predictive modeling and AI evaluation connect back to business decisions.",
+      infra: "Platform and deployment work make the analytics and AI layers usable in real environments."
     };
 
     function pill(text){
@@ -626,6 +937,58 @@
       backdrop.setAttribute("aria-hidden","true");
     }
 
+    function setProjectFilter(filter){
+      const buttons = document.querySelectorAll("#projectFilters .chip");
+      const cards = document.querySelectorAll(".proj");
+      let visibleCount = 0;
+
+      buttons.forEach((button) => {
+        button.classList.toggle("active", button.dataset.filter === filter);
+      });
+
+      cards.forEach((card) => {
+        const tags = (card.dataset.tags || "").split(" ");
+        const matches = filter === "all" || tags.includes(filter);
+        card.hidden = !matches;
+        if(matches) visibleCount += 1;
+      });
+
+      const label = visibleCount === 1 ? "featured system" : "featured systems";
+      document.getElementById("projectCount").textContent = `Showing ${visibleCount} ${label}`;
+    }
+
+    function setupExperienceToggles(){
+      document.querySelectorAll(".timeline-item").forEach((item) => {
+        const toggle = item.querySelector(".timeline-toggle");
+        toggle.addEventListener("click", () => {
+          const isOpen = item.classList.contains("open");
+          document.querySelectorAll(".timeline-item").forEach((entry) => entry.classList.remove("open"));
+          if(!isOpen) item.classList.add("open");
+        });
+      });
+    }
+
+    function setupSkillCards(){
+      const note = document.getElementById("skillNote");
+      document.querySelectorAll(".skill-card").forEach((card) => {
+        card.addEventListener("click", () => {
+          document.querySelectorAll(".skill-card").forEach((entry) => entry.classList.remove("active"));
+          card.classList.add("active");
+          note.textContent = SKILL_NOTES[card.dataset.skill] || "";
+        });
+      });
+    }
+
+    async function copyEmail(){
+      const note = document.getElementById("contactNote");
+      try{
+        await navigator.clipboard.writeText("mishra.utkarsh018@gmail.com");
+        note.textContent = "Email copied to clipboard.";
+      }catch{
+        note.textContent = "Clipboard access is blocked here, but the email is ready to copy: mishra.utkarsh018@gmail.com";
+      }
+    }
+
     document.getElementById("modalBackdrop").addEventListener("click", (e) => {
       if(e.target.id === "modalBackdrop") closeModal();
     });
@@ -633,6 +996,13 @@
       if(e.key === "Escape") closeModal();
     });
 
+    document.querySelectorAll("#projectFilters .chip").forEach((button) => {
+      button.addEventListener("click", () => setProjectFilter(button.dataset.filter));
+    });
+    document.getElementById("copyEmailBtn").addEventListener("click", copyEmail);
+    setupExperienceToggles();
+    setupSkillCards();
+    setProjectFilter("all");
     document.getElementById("yr").textContent = new Date().getFullYear();
   </script>
 </body>
