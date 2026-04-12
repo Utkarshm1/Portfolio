@@ -242,6 +242,25 @@
       color:var(--muted2);
       font-size:12px;
     }
+    .portfolio-group{
+      margin-top:18px;
+    }
+    .portfolio-group:first-of-type{
+      margin-top:0;
+    }
+    .group-head{
+      margin-bottom:12px;
+    }
+    .group-head h3{
+      margin:0 0 4px 0;
+      font-size:15px;
+      letter-spacing:.2px;
+    }
+    .group-head p{
+      margin:0;
+      color:var(--muted2);
+      font-size:13px;
+    }
     .timeline{
       display:grid;
       gap:12px;
@@ -519,63 +538,268 @@
           <button class="chip" type="button" data-filter="trust">Trust & Security</button>
           <button class="chip" type="button" data-filter="decision">Decision Models</button>
         </div>
-        <div class="statline" id="projectCount">Showing 4 featured systems</div>
+        <div class="statline" id="projectCount">Showing 17 portfolio systems</div>
       </div>
-      <div class="grid">
-        <div class="proj" data-tags="ai analytics decision" onclick="openProject('dashai')">
-          <div class="title">
-            <h3>DashAI | AI-Enabled Decision Intelligence Platform</h3>
-            <span class="tag">Flagship</span>
-          </div>
-          <div class="stack mono">(Python • Streamlit • XGBoost • SHAP • Prophet • NLP • Power BI)</div>
-          <ul class="bullets">
-            <li>Unified forecasting, clustering, NLP analysis, and explainability into one modular decision layer.</li>
-            <li>Automated insight generation across marketing, financial, and operational datasets, cutting manual analysis cycles by <b>30%</b>.</li>
-            <li>Delivered scenario-oriented dashboards that made model outputs usable for executive decision workflows.</li>
-          </ul>
-          <div class="preview">Click to open the deeper project breakdown.</div>
-        </div>
 
-        <div class="proj" data-tags="analytics decision" onclick="openProject('eleckart')">
-          <div class="title">
-            <h3>ElecKart | Marketing Decision Optimization Engine</h3>
-            <span class="tag">Impact</span>
-          </div>
-          <div class="stack mono">(Python • SQL • Regression Modeling • Scenario Simulation • Power BI)</div>
-          <ul class="bullets">
-            <li>Built attribution + optimization framework across multi-channel spend data.</li>
-            <li>Improved conversion performance by <b>17%</b>; projected ~<b>12%</b> ROI uplift.</li>
-            <li>Converted model outputs into KPI-aligned budget recommendations.</li>
-          </ul>
-          <div class="preview">Click to explore the modeling and scenario design choices.</div>
+      <div class="portfolio-group">
+        <div class="group-head">
+          <h3>Tier 1 | Flagship Systems</h3>
+          <p>Deep, end-to-end systems that anchor the portfolio and show product, modeling, and decision-making depth.</p>
         </div>
-
-        <div class="proj" data-tags="ai trust security" onclick="openProject('amireal')">
-          <div class="title">
-            <h3>AMIREAL | Data Integrity & Media Verification Infrastructure</h3>
-            <span class="tag">Trust</span>
+        <div class="grid">
+          <div class="proj" data-tags="ai analytics decision" onclick="openProject('dashai')">
+            <div class="title">
+              <h3>DashAI | AI-Enabled Decision Intelligence Platform</h3>
+              <span class="tag">Flagship</span>
+            </div>
+            <div class="stack mono">(Python • Streamlit • XGBoost • SHAP • Prophet • NLP • Power BI)</div>
+            <ul class="bullets">
+              <li>Unified forecasting, clustering, NLP analysis, and explainability into one modular decision layer.</li>
+              <li>Automated insight generation across marketing, financial, and operational datasets, cutting manual analysis cycles by <b>30%</b>.</li>
+              <li>Delivered scenario-oriented dashboards that made model outputs usable for executive decision workflows.</li>
+            </ul>
+            <div class="preview">Click to open the deeper project breakdown.</div>
           </div>
-          <div class="stack mono">(Python • Cryptographic Hashing • Metadata Validation • Streamlit)</div>
-          <ul class="bullets">
-            <li>Implemented tamper-evident hashing to create immutable fingerprints for media asset verification.</li>
-            <li>Built metadata extraction and validation checks to support integrity, auditability, and governance.</li>
-            <li>Created a verification UI for authenticity comparison workflows and future synthetic media extensions.</li>
-          </ul>
-          <div class="preview">Click to view the trust architecture and verification workflow.</div>
+
+          <div class="proj" data-tags="ai trust security" onclick="openProject('airisk')">
+            <div class="title">
+              <h3>AI Risk Intelligence Dashboard</h3>
+              <span class="tag">Flagship</span>
+            </div>
+            <div class="stack mono">(Python • Streamlit • Plotly • OWASP LLM Top 10 • MITRE ATLAS)</div>
+            <ul class="bullets">
+              <li>Built a structured AI security scoring system for chatbots, RAG apps, and agentic workflows.</li>
+              <li>Mapped model weaknesses to OWASP and MITRE-aligned categories for decision-level governance visibility.</li>
+              <li>Improved risk detection coverage by approximately <b>40%</b> through repeatable scenario evaluation.</li>
+            </ul>
+            <div class="preview">Click to explore the scoring framework, tracked metrics, and dashboard logic.</div>
+          </div>
+
+          <div class="proj" data-tags="ai trust decision" onclick="openProject('hybrid')">
+            <div class="title">
+              <h3>Hybrid LLM Evaluation Engine</h3>
+              <span class="tag">Flagship</span>
+            </div>
+            <div class="stack mono">(Python • Local Embeddings • Rule Engine • Threshold Tuning)</div>
+            <ul class="bullets">
+              <li>Combined embedding-based semantic scoring with deterministic validation to evaluate LLM outputs more reliably.</li>
+              <li>Built a multi-stage pipeline for intent detection, semantic similarity, and exploit detection.</li>
+              <li>Reduced false positives in vulnerability evaluation while improving consistency across test runs.</li>
+            </ul>
+            <div class="preview">Click to inspect the hybrid evaluation architecture and tuning approach.</div>
+          </div>
+
+          <div class="proj" data-tags="ai analytics decision" onclick="openProject('churn')">
+            <div class="title">
+              <h3>Decision Automation AI | Churn Action System</h3>
+              <span class="tag">Flagship</span>
+            </div>
+            <div class="stack mono">(Python • Logistic Regression • Prescriptive Analytics • SaaS Simulation)</div>
+            <ul class="bullets">
+              <li>Built a churn-risk prediction system that translated scores into prioritized retention actions.</li>
+              <li>Modeled customer health using usage, revenue, login behavior, and support-ticket features over a 10K+ record SaaS dataset.</li>
+              <li>Connected prediction outputs to simulated MRR impact and action playbooks for business teams.</li>
+            </ul>
+            <div class="preview">Click to see how predictions were converted into business actions.</div>
+          </div>
+
+          <div class="proj" data-tags="ai trust security" onclick="openProject('amireal')">
+            <div class="title">
+              <h3>AMIREAL | Data Integrity & Media Verification Infrastructure</h3>
+              <span class="tag">Trust</span>
+            </div>
+            <div class="stack mono">(Node.js • FastAPI • Cryptographic Hashing • Metadata Validation • Verification API)</div>
+            <ul class="bullets">
+              <li>Implemented tamper-evident hashing to create immutable fingerprints for media asset verification.</li>
+              <li>Built a verification pipeline with metadata checks, provenance logic, and API-based authenticity lookups.</li>
+              <li>Created the foundation for AI forensics scoring and trust-layer infrastructure for digital media.</li>
+            </ul>
+            <div class="preview">Click to view the trust architecture, ledger workflow, and roadmap.</div>
+          </div>
         </div>
+      </div>
 
-        <div class="proj" data-tags="analytics decision" onclick="openProject('tco')">
-          <div class="title">
-            <h3>Data Center TCO | Distributed vs Monolithic Cost Modeling</h3>
-            <span class="tag">Decision Model</span>
+      <div class="portfolio-group">
+        <div class="group-head">
+          <h3>Tier 2 | Applied AI & Analytics</h3>
+          <p>Mid-depth project work showing practical NLP, marketing analytics, forecasting, and scalable data systems.</p>
+        </div>
+        <div class="grid">
+          <div class="proj" data-tags="analytics decision" onclick="openProject('eleckart')">
+            <div class="title">
+              <h3>ElecKart | Marketing Decision Optimization Engine</h3>
+              <span class="tag">Impact</span>
+            </div>
+            <div class="stack mono">(Python • SQL • Regression Modeling • Scenario Simulation • Power BI)</div>
+            <ul class="bullets">
+              <li>Built attribution + optimization framework across multi-channel spend data.</li>
+              <li>Improved conversion performance by <b>17%</b>; projected ~<b>12%</b> ROI uplift.</li>
+              <li>Converted model outputs into KPI-aligned budget recommendations.</li>
+            </ul>
+            <div class="preview">Click to explore the modeling and scenario design choices.</div>
           </div>
-          <div class="stack mono">(Power BI • Excel • SQL • Cost Modeling)</div>
-          <ul class="bullets">
-            <li>Modeled total cost of ownership across cities and operating scenarios.</li>
-            <li>Built executive dashboards to compare cost drivers and savings levers.</li>
-            <li>Packaged findings into decision-ready recommendations.</li>
-          </ul>
-          <div class="preview">Click to inspect the scenario framing and trade-off analysis.</div>
+
+          <div class="proj" data-tags="ai analytics" onclick="openProject('sentiment')">
+            <div class="title">
+              <h3>FIFA World Cup Sentiment Analysis</h3>
+              <span class="tag">NLP</span>
+            </div>
+            <div class="stack mono">(Python • BERT • NLP • Trend Analysis • Visualization)</div>
+            <ul class="bullets">
+              <li>Processed large-scale fan commentary to quantify sentiment by team, event, and tournament phase.</li>
+              <li>Used BERT-based sentiment classification to capture public reaction patterns beyond keyword rules.</li>
+              <li>Delivered trend views that surfaced shifts in engagement and perception in near real time.</li>
+            </ul>
+            <div class="preview">Click to review the NLP workflow and sentiment reporting design.</div>
+          </div>
+
+          <div class="proj" data-tags="analytics decision" onclick="openProject('keyword')">
+            <div class="title">
+              <h3>Keyword Gap Analysis Engine</h3>
+              <span class="tag">Growth</span>
+            </div>
+            <div class="stack mono">(Python • SEO Analytics • Competitive Analysis • Clustering)</div>
+            <ul class="bullets">
+              <li>Built a competitor benchmarking workflow to identify high-value keyword gaps and ranking opportunities.</li>
+              <li>Grouped missing opportunities into content clusters to prioritize SEO execution.</li>
+              <li>Produced an action roadmap that connected search data to traffic-growth decisions.</li>
+            </ul>
+            <div class="preview">Click to see the comparison logic and opportunity clustering approach.</div>
+          </div>
+
+          <div class="proj" data-tags="analytics ai" onclick="openProject('streaming')">
+            <div class="title">
+              <h3>Cloud-Based Streaming Pipeline</h3>
+              <span class="tag">Scale</span>
+            </div>
+            <div class="stack mono">(Azure Event Hubs • Databricks • Synapse • Streaming Analytics)</div>
+            <ul class="bullets">
+              <li>Engineered a real-time event pipeline processing <b>100K+</b> records for downstream monitoring and anomaly workflows.</li>
+              <li>Reduced anomaly detection latency by <b>30%</b> and improved data accuracy by <b>17%</b>.</li>
+              <li>Demonstrated cloud-scale ingestion, transformation, and decision-support readiness.</li>
+            </ul>
+            <div class="preview">Click to inspect the event flow and architecture decisions.</div>
+          </div>
+
+          <div class="proj" data-tags="analytics decision" onclick="openProject('basket')">
+            <div class="title">
+              <h3>Instacart Market Basket Analysis</h3>
+              <span class="tag">Retail</span>
+            </div>
+            <div class="stack mono">(Python • Association Rules • Clustering • Retail Analytics)</div>
+            <ul class="bullets">
+              <li>Analyzed co-purchase behavior to identify product affinities and bundling opportunities.</li>
+              <li>Used association rules and clustering to support cross-sell strategy recommendations.</li>
+              <li>Translated basket patterns into merchandising and promotion insights.</li>
+            </ul>
+            <div class="preview">Click to view the affinity logic and recommendation framing.</div>
+          </div>
+
+          <div class="proj" data-tags="ai analytics" onclick="openProject('summarization')">
+            <div class="title">
+              <h3>NLP Text Summarization System</h3>
+              <span class="tag">NLP</span>
+            </div>
+            <div class="stack mono">(Python • NLTK • spaCy • TextRank • Evaluation)</div>
+            <ul class="bullets">
+              <li>Built an automated summarization pipeline for long-form text and news-style content.</li>
+              <li>Compared extractive approaches across readability, compression, and information retention.</li>
+              <li>Created an evaluation workflow to benchmark summary quality across methods.</li>
+            </ul>
+            <div class="preview">Click to review the summarization methods and evaluation design.</div>
+          </div>
+
+          <div class="proj" data-tags="ai analytics" onclick="openProject('speech')">
+            <div class="title">
+              <h3>Real-Time Speech Translation System</h3>
+              <span class="tag">Multimodal</span>
+            </div>
+            <div class="stack mono">(Speech-to-Text • NLP Translation • Text-to-Speech • Embeddings)</div>
+            <ul class="bullets">
+              <li>Connected speech recognition, translation, and text-to-speech into a real-time multilingual pipeline.</li>
+              <li>Added embedding-based context refinement to improve meaning preservation across turns.</li>
+              <li>Demonstrated end-to-end multimodal AI system design for live communication workflows.</li>
+            </ul>
+            <div class="preview">Click to inspect the speech pipeline and context-handling logic.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-group">
+        <div class="group-head">
+          <h3>Tier 3 | Foundations, Cloud, and Capability Proof</h3>
+          <p>Compact projects that round out the portfolio across computer vision, databases, forecasting, and cloud LLM workflows.</p>
+        </div>
+        <div class="grid">
+          <div class="proj" data-tags="ai analytics" onclick="openProject('fashion')">
+            <div class="title">
+              <h3>Fashion MNIST Image Classification</h3>
+              <span class="tag">CV</span>
+            </div>
+            <div class="stack mono">(Python • CNN • Data Augmentation • Regularization)</div>
+            <ul class="bullets">
+              <li>Built a convolutional image classifier for apparel recognition using Fashion MNIST.</li>
+              <li>Improved generalization through augmentation and regularization strategies.</li>
+              <li>Showed strong computer-vision fundamentals in model training and evaluation.</li>
+            </ul>
+            <div class="preview">Click to open the modeling notes and accuracy-improvement choices.</div>
+          </div>
+
+          <div class="proj" data-tags="ai analytics" onclick="openProject('gemini')">
+            <div class="title">
+              <h3>GeminiLLM NLP System</h3>
+              <span class="tag">LLM</span>
+            </div>
+            <div class="stack mono">(BigQuery • LLM Pipelines • Scalable Inference • NLP)</div>
+            <ul class="bullets">
+              <li>Designed a scalable NLP inference workflow over large datasets using cloud-native processing.</li>
+              <li>Connected LLM-based text analysis to warehouse-scale data operations.</li>
+              <li>Demonstrated practical large-volume AI processing beyond notebook prototypes.</li>
+            </ul>
+            <div class="preview">Click to see the cloud workflow and large-dataset processing setup.</div>
+          </div>
+
+          <div class="proj" data-tags="analytics decision" onclick="openProject('inventory')">
+            <div class="title">
+              <h3>Inventory Forecasting System</h3>
+              <span class="tag">Forecasting</span>
+            </div>
+            <div class="stack mono">(Python • Time Series • Demand Planning • Forecast Evaluation)</div>
+            <ul class="bullets">
+              <li>Built demand forecasting models to support inventory planning and stock-level decisions.</li>
+              <li>Applied time-series methods to estimate future demand under changing business conditions.</li>
+              <li>Used forecast outputs to inform operational planning and reduce uncertainty.</li>
+            </ul>
+            <div class="preview">Click to review the forecasting methods and planning use case.</div>
+          </div>
+
+          <div class="proj" data-tags="analytics" onclick="openProject('dbms')">
+            <div class="title">
+              <h3>E-Commerce Database Management System</h3>
+              <span class="tag">Data Model</span>
+            </div>
+            <div class="stack mono">(SQL • Data Modeling • Backend Logic • Transaction Design)</div>
+            <ul class="bullets">
+              <li>Designed a relational system to manage products, availability, orders, and delivery timelines.</li>
+              <li>Modeled core entities and workflows to support reliable e-commerce operations.</li>
+              <li>Demonstrated backend and schema-design fundamentals that support analytics later on.</li>
+            </ul>
+            <div class="preview">Click to inspect the schema logic and operational workflow coverage.</div>
+          </div>
+
+          <div class="proj" data-tags="analytics decision" onclick="openProject('tco')">
+            <div class="title">
+              <h3>Data Center TCO | Distributed vs Monolithic Cost Modeling</h3>
+              <span class="tag">Decision Model</span>
+            </div>
+            <div class="stack mono">(Power BI • Excel • SQL • Cost Modeling)</div>
+            <ul class="bullets">
+              <li>Modeled total cost of ownership across cities and operating scenarios.</li>
+              <li>Built executive dashboards to compare cost drivers and savings levers.</li>
+              <li>Packaged findings into decision-ready recommendations.</li>
+            </ul>
+            <div class="preview">Click to inspect the scenario framing and trade-off analysis.</div>
+          </div>
         </div>
       </div>
     </div>
@@ -605,20 +829,12 @@
 
     <!-- ADDITIONAL SYSTEMS -->
     <div class="section" id="systems">
-      <h2>Additional Analytics Systems</h2>
+      <h2>Portfolio Positioning</h2>
       <div class="card">
-        <div class="list-inline">
-          <span>BERT-Based Sentiment Analysis</span>
-          <span>• Market Basket Optimization</span>
-          <span>• Time-Series Inventory Forecasting</span>
-          <span>• Event-Driven Streaming Pipelines (Azure)</span>
-          <span>• GeminiLLM-NLP</span>
-          <span>• AI Referee Evaluation System</span>
-          <span>• Healthcare Distribution Analytics</span>
-          <span>• Keyword Gap & SEO Performance Analytics</span>
-          <span>• CRM Reporting Modernization</span>
-          <span>• Data Center TCO Optimization</span>
-        </div>
+        <p style="margin:0; color:var(--muted); font-size:15px;">
+          The throughline across this portfolio is consistent: I design <b style="color:var(--text);">AI-powered decision systems</b>, evaluate <b style="color:var(--text);">LLM and AI risk</b>, and build <b style="color:var(--text);">scalable analytics platforms</b> that convert fragmented data into clear business actions.
+          The flagship work shows end-to-end system ownership, the mid-tier work demonstrates applied breadth, and the foundation projects reinforce range across data, cloud, NLP, forecasting, and product-oriented thinking.
+        </p>
       </div>
     </div>
 
@@ -821,11 +1037,54 @@
           "Architected an end-to-end workflow spanning ingestion, feature engineering, forecasting, NLP analysis, and SHAP-based explainability.",
           "Automated insight generation across financial, operational, and marketing datasets to reduce repetitive manual analysis.",
           "Designed decision-ready dashboards with KPI views, scenario comparisons, and interpretable drivers behind predictions.",
+          "Added a recommendation layer that translated model outputs into next-best actions instead of passive reporting.",
           "Structured the platform for extensibility across forecasting, segmentation, and recommendation use cases."
         ],
         links: [
           { label: "GitHub (optional)", url: "YOUR_DASHAI_GITHUB" },
           { label: "Demo (optional)", url: "YOUR_DASHAI_DEMO" }
+        ]
+      },
+      airisk: {
+        title: "AI Risk Intelligence Dashboard",
+        stack: ["Python","Streamlit","Plotly","OWASP LLM Top 10","MITRE ATLAS"],
+        summary: "A risk intelligence system for evaluating AI application vulnerabilities and translating test outcomes into governance-ready visibility.",
+        bullets: [
+          "Designed a structured risk scoring framework aligned to OWASP LLM Top 10 and MITRE ATLAS concepts.",
+          "Evaluated more than 10 AI deployment scenarios spanning chatbots, RAG systems, and agentic workflows.",
+          "Tracked attack success rate, severity distribution, category mapping, and risk trends over time in an interactive dashboard.",
+          "Improved risk detection coverage by roughly 40% versus ad hoc evaluation approaches."
+        ],
+        links: [
+          { label: "GitHub (optional)", url: "YOUR_AI_RISK_GITHUB" }
+        ]
+      },
+      hybrid: {
+        title: "Hybrid LLM Evaluation Engine",
+        stack: ["Python","Local Embeddings","Rule-Based Validation","Threshold Tuning"],
+        summary: "A custom evaluation framework that combines semantic scoring and deterministic checks to make LLM assessment more consistent and attack-aware.",
+        bullets: [
+          "Implemented embedding-based similarity scoring using local models to avoid paid API dependencies.",
+          "Added rule-based validation for structured checks that semantic methods alone can miss.",
+          "Designed a multi-stage pipeline spanning intent detection, semantic similarity evaluation, and exploit detection.",
+          "Reduced false positives and improved consistency through calibrated, threshold-based scoring logic."
+        ],
+        links: [
+          { label: "GitHub (optional)", url: "YOUR_HYBRID_EVAL_GITHUB" }
+        ]
+      },
+      churn: {
+        title: "Decision Automation AI | Churn Action System",
+        stack: ["Python","Logistic Regression","Prescriptive Analytics","Synthetic SaaS Data"],
+        summary: "A predictive and prescriptive retention system that identifies churn risk and recommends business actions based on customer priority.",
+        bullets: [
+          "Generated a 10K+ record SaaS dataset to simulate realistic retention, engagement, and revenue patterns.",
+          "Trained a logistic regression model using usage frequency, login activity, support tickets, and revenue features.",
+          "Built a decision engine that prioritized at-risk customers and assigned intervention actions such as offers or outreach.",
+          "Connected churn predictions to simulated MRR impact analysis so teams could evaluate action value."
+        ],
+        links: [
+          { label: "GitHub (optional)", url: "YOUR_CHURN_GITHUB" }
         ]
       },
       eleckart: {
@@ -834,6 +1093,7 @@
         summary: "A marketing analytics system that quantifies channel impact and supports budget allocation decisions through scenario simulation.",
         bullets: [
           "Built a regression-based attribution framework over multi-channel spend and performance history.",
+          "Analyzed channel-level effectiveness across paid ads, social, and promotions to expose ROI differences.",
           "Produced KPI-aligned recommendations to improve conversions (+17%) and estimate ROI impact (~12%).",
           "Delivered executive-ready dashboards enabling what-if budget scenarios for planning discussions."
         ],
@@ -841,14 +1101,146 @@
           { label: "Case notes (optional)", url: "YOUR_ELECKART_LINK" }
         ]
       },
+      sentiment: {
+        title: "FIFA World Cup Sentiment Analysis",
+        stack: ["Python","BERT","NLP","Visualization"],
+        summary: "An NLP analytics project that measured tournament sentiment across teams, events, and fan reactions using transformer-based classification.",
+        bullets: [
+          "Processed large-scale text data capturing public commentary around FIFA World Cup events.",
+          "Used BERT-based sentiment analysis to identify positive, negative, and neutral audience reactions.",
+          "Tracked sentiment shifts across teams and major moments to surface engagement patterns.",
+          "Presented real-time sentiment views to demonstrate how NLP can support event-level insight generation."
+        ],
+        links: [
+          { label: "GitHub (optional)", url: "YOUR_SENTIMENT_GITHUB" }
+        ]
+      },
+      keyword: {
+        title: "Keyword Gap Analysis Engine",
+        stack: ["Python","SEO Analytics","Competitive Analysis","Clustering"],
+        summary: "An SEO analytics workflow that identifies missed ranking opportunities by comparing competitor coverage and grouping gaps into action areas.",
+        bullets: [
+          "Compared brand and competitor keyword portfolios to uncover ranking gaps.",
+          "Identified high-potential search terms and clustered them into content opportunity themes.",
+          "Translated the analysis into a prioritized SEO roadmap tied to growth opportunities."
+        ],
+        links: [
+          { label: "GitHub (optional)", url: "YOUR_KEYWORD_GITHUB" }
+        ]
+      },
+      streaming: {
+        title: "Cloud-Based Streaming Pipeline",
+        stack: ["Azure Event Hubs","Databricks","Synapse","Streaming Analytics"],
+        summary: "A real-time cloud data pipeline for processing high-volume events and supporting faster anomaly detection and monitoring decisions.",
+        bullets: [
+          "Built an event-driven architecture using Azure services to process more than 100K records.",
+          "Integrated ingestion, transformation, and analytical processing layers for near-real-time visibility.",
+          "Reduced anomaly detection time by 30% and improved data accuracy by 17% through better pipeline design."
+        ],
+        links: [
+          { label: "Architecture notes (optional)", url: "YOUR_STREAMING_LINK" }
+        ]
+      },
+      basket: {
+        title: "Instacart Market Basket Analysis",
+        stack: ["Python","Association Rules","Clustering","Retail Analytics"],
+        summary: "A retail analytics project that surfaced product affinities and purchasing behavior to support bundling and cross-sell strategy.",
+        bullets: [
+          "Applied association-rule mining to identify frequently co-purchased products.",
+          "Used clustering to segment purchase behavior and uncover relationship patterns at scale.",
+          "Translated product affinities into bundle, promotion, and merchandising recommendations."
+        ],
+        links: [
+          { label: "GitHub (optional)", url: "YOUR_BASKET_GITHUB" }
+        ]
+      },
+      summarization: {
+        title: "NLP Text Summarization System",
+        stack: ["Python","NLTK","spaCy","TextRank","Evaluation"],
+        summary: "An automated summarization engine for long-form text that benchmarks multiple extractive approaches for concise, readable output.",
+        bullets: [
+          "Built a summarization pipeline using NLTK, spaCy, and TextRank-based methods.",
+          "Compared summarization approaches on brevity, readability, and information coverage.",
+          "Generated concise summaries and evaluated performance to guide method selection."
+        ],
+        links: [
+          { label: "GitHub (optional)", url: "YOUR_SUMMARIZATION_GITHUB" }
+        ]
+      },
+      speech: {
+        title: "Real-Time Speech Translation System",
+        stack: ["Speech Recognition","NLP Translation","Text-to-Speech","Embeddings"],
+        summary: "A multimodal AI pipeline that converts live speech into translated audio with context-aware refinement.",
+        bullets: [
+          "Connected speech recognition, translation, and text-to-speech into one end-to-end workflow.",
+          "Used embeddings to refine contextual meaning and improve translation quality across turns.",
+          "Demonstrated real-time multilingual communication for practical conversation scenarios."
+        ],
+        links: [
+          { label: "Demo (optional)", url: "YOUR_SPEECH_DEMO" }
+        ]
+      },
+      fashion: {
+        title: "Fashion MNIST Image Classification",
+        stack: ["Python","CNN","Data Augmentation","Regularization"],
+        summary: "A computer-vision project focused on image classification fundamentals using convolutional networks and training optimization techniques.",
+        bullets: [
+          "Built a CNN model to classify apparel categories from Fashion MNIST images.",
+          "Applied augmentation and regularization to improve generalization and reduce overfitting.",
+          "Strengthened core computer-vision modeling, training, and evaluation skills."
+        ],
+        links: [
+          { label: "GitHub (optional)", url: "YOUR_FASHION_GITHUB" }
+        ]
+      },
+      gemini: {
+        title: "GeminiLLM NLP System",
+        stack: ["BigQuery","LLM Pipelines","Cloud NLP","Scalable Inference"],
+        summary: "A scalable NLP processing workflow that uses cloud data infrastructure to run LLM-style text analysis over large datasets.",
+        bullets: [
+          "Built a large-scale inference workflow using BigQuery-backed processing patterns.",
+          "Applied NLP and LLM pipelines to structured and unstructured data at cloud scale.",
+          "Showed how warehouse-native processing can support production-oriented AI workloads."
+        ],
+        links: [
+          { label: "GitHub (optional)", url: "YOUR_GEMINI_GITHUB" }
+        ]
+      },
+      inventory: {
+        title: "Inventory Forecasting System",
+        stack: ["Python","Time Series","Demand Forecasting","Planning Analytics"],
+        summary: "A forecasting project that estimates demand trends to support inventory planning and operational decisions.",
+        bullets: [
+          "Built demand-forecasting models using time-series techniques suited to inventory scenarios.",
+          "Compared forecast behavior across patterns to improve planning reliability.",
+          "Turned predicted demand into operational insight for stock and supply decisions."
+        ],
+        links: [
+          { label: "GitHub (optional)", url: "YOUR_INVENTORY_GITHUB" }
+        ]
+      },
+      dbms: {
+        title: "E-Commerce Database Management System",
+        stack: ["SQL","Database Design","Backend Logic","Relational Modeling"],
+        summary: "A foundational backend and data-modeling project for managing products, availability, orders, and delivery workflows in an e-commerce setting.",
+        bullets: [
+          "Designed relational schemas for products, inventory, orders, and delivery tracking.",
+          "Modeled operational flows to maintain availability visibility and order-status consistency.",
+          "Built strong fundamentals in data modeling, transactional logic, and backend-oriented thinking."
+        ],
+        links: [
+          { label: "GitHub (optional)", url: "YOUR_DBMS_GITHUB" }
+        ]
+      },
       amireal: {
         title: "AMIREAL | Data Integrity & Media Verification Infrastructure",
-        stack: ["Python","Cryptographic Hashing","Metadata Validation","Streamlit"],
-        summary: "A tamper-evident verification system for digital assets using file hashing and metadata validation to support integrity and auditability.",
+        stack: ["Node.js","FastAPI","Cryptographic Hashing","Metadata Validation","Verification API"],
+        summary: "A media-authenticity platform focused on provenance, tamper detection, and verification workflows for increasingly AI-generated digital content.",
         bullets: [
           "Implemented cryptographic hashing to generate immutable fingerprints for file-level integrity validation.",
           "Built metadata extraction and validation checks to surface structural inconsistencies and strengthen auditability.",
-          "Created a verification interface for authenticity comparison workflows and future synthetic-media detection extensions."
+          "Designed a verification API and authenticity ledger concept to support provenance tracking and trust workflows.",
+          "Planned an extensible AI forensics scoring layer for future generated-media detection."
         ],
         links: [
           { label: "GitHub (optional)", url: "YOUR_AMIREAL_GITHUB" }
@@ -953,7 +1345,7 @@
         if(matches) visibleCount += 1;
       });
 
-      const label = visibleCount === 1 ? "featured system" : "featured systems";
+      const label = visibleCount === 1 ? "portfolio system" : "portfolio systems";
       document.getElementById("projectCount").textContent = `Showing ${visibleCount} ${label}`;
     }
 
