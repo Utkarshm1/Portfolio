@@ -9,16 +9,18 @@
 
   <style>
     :root{
-      --bg:#0b0f17;
-      --panel:#0f1624;
-      --panel2:#0c1320;
-      --text:#e8eefc;
-      --muted:#b6c2e2;
-      --muted2:#93a3c8;
-      --line:rgba(255,255,255,.10);
-      --accent:#8ab4ff;
-      --accent2:#a6f0c6;
-      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --bg:#0d131a;
+      --panel:#121b24;
+      --panel2:#0f1720;
+      --text:#edf3fb;
+      --muted:#b5c4d7;
+      --muted2:#7f95af;
+      --line:rgba(173,190,214,.15);
+      --accent:#67a8ff;
+      --accent-strong:#8cbcff;
+      --accent2:#49c4bf;
+      --accent3:#f0c97c;
+      --shadow:0 14px 36px rgba(0,0,0,.34);
       --radius:16px;
       --max:980px;
     }
@@ -27,8 +29,9 @@
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background: radial-gradient(1200px 800px at 20% 0%, rgba(138,180,255,.12), transparent 60%),
-                  radial-gradient(1000px 700px at 90% 10%, rgba(166,240,198,.10), transparent 55%),
+      background: radial-gradient(1200px 800px at 18% 0%, rgba(103,168,255,.14), transparent 58%),
+                  radial-gradient(900px 640px at 88% 12%, rgba(73,196,191,.11), transparent 52%),
+                  linear-gradient(180deg, rgba(255,255,255,.02), transparent 18%),
                   var(--bg);
       color:var(--text);
       line-height:1.55;
@@ -82,7 +85,7 @@
       .brand{min-width:auto}
     }
     .card{
-      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      background:linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
       border:1px solid var(--line);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
@@ -115,6 +118,29 @@
     .cta{
       display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;
     }
+    .proof-strip{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:14px;
+    }
+    .proof-item{
+      flex:1 1 150px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:10px 12px;
+      background:linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.015));
+    }
+    .proof-item b{
+      display:block;
+      font-size:18px;
+      color:var(--accent3);
+      margin-bottom:2px;
+    }
+    .proof-item span{
+      color:var(--muted2);
+      font-size:12px;
+    }
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:8px;
       padding:10px 12px;
@@ -128,10 +154,10 @@
     }
     .btn:hover{border-color:rgba(138,180,255,.35); background:rgba(138,180,255,.08)}
     .btn.primary{
-      background:linear-gradient(135deg, rgba(138,180,255,.18), rgba(166,240,198,.14));
-      border-color:rgba(138,180,255,.25);
+      background:linear-gradient(135deg, rgba(103,168,255,.22), rgba(73,196,191,.18));
+      border-color:rgba(103,168,255,.28);
     }
-    .btn.primary:hover{background:linear-gradient(135deg, rgba(138,180,255,.24), rgba(166,240,198,.18))}
+    .btn.primary:hover{background:linear-gradient(135deg, rgba(103,168,255,.28), rgba(73,196,191,.22))}
     .quick{
       display:grid; gap:10px;
     }
@@ -173,8 +199,8 @@
     .proj[hidden]{display:none}
     .proj:hover{
       transform: translateY(-2px);
-      border-color: rgba(138,180,255,.35);
-      background: rgba(138,180,255,.06);
+      border-color: rgba(103,168,255,.34);
+      background: rgba(103,168,255,.055);
     }
     .proj .preview{
       margin-top:12px;
@@ -197,7 +223,7 @@
       padding:4px 8px;
       border:1px solid var(--line);
       border-radius:999px;
-      background:rgba(0,0,0,.18);
+      background:rgba(255,255,255,.03);
       white-space:nowrap;
     }
     .stack{
@@ -242,12 +268,12 @@
     .chip:hover,
     .chip.active{
       color:var(--text);
-      border-color:rgba(138,180,255,.35);
-      background:rgba(138,180,255,.10);
+      border-color:rgba(103,168,255,.34);
+      background:rgba(103,168,255,.10);
       transform:translateY(-1px);
     }
     .chip.active{
-      box-shadow:0 0 0 1px rgba(138,180,255,.08) inset;
+      box-shadow:0 0 0 1px rgba(103,168,255,.08) inset;
     }
     .statline{
       color:var(--muted2);
@@ -272,6 +298,31 @@
       color:var(--muted2);
       font-size:13px;
     }
+    .recruiter-note{
+      margin-bottom:14px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .spotlight-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:14px;
+      margin-bottom:14px;
+    }
+    .spotlight-grid .proj{
+      min-height:100%;
+      background:linear-gradient(180deg, rgba(103,168,255,.09), rgba(255,255,255,.02));
+      border-color:rgba(103,168,255,.18);
+    }
+    .spotlight-grid .proj h3{
+      font-size:18px;
+    }
+    .spotlight-grid .preview{
+      color:#d9e6ff;
+    }
+    @media (max-width: 980px){
+      .spotlight-grid{grid-template-columns:1fr}
+    }
     .timeline{
       display:grid;
       gap:12px;
@@ -284,7 +335,7 @@
       transition:border-color .14s ease, background .14s ease;
     }
     .timeline-item:hover{
-      border-color:rgba(138,180,255,.24);
+      border-color:rgba(103,168,255,.24);
       background:rgba(255,255,255,.03);
     }
     .timeline-toggle{
@@ -316,7 +367,7 @@
     }
     .timeline-icon{
       font-size:18px;
-      color:var(--accent);
+      color:var(--accent2);
       transition:transform .14s ease;
     }
     .timeline-item.open .timeline-icon{
@@ -364,8 +415,8 @@
     }
     .skill-card:hover,
     .skill-card.active{
-      border-color:rgba(138,180,255,.35);
-      background:rgba(138,180,255,.08);
+      border-color:rgba(103,168,255,.34);
+      background:rgba(103,168,255,.08);
       transform:translateY(-1px);
     }
     .skill-card h3{
@@ -419,6 +470,21 @@
       color:var(--muted);
       font-size:14px;
     }
+    .best-list{
+      display:grid;
+      gap:10px;
+    }
+    .best-item{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:12px 14px;
+      background:rgba(255,255,255,.02);
+    }
+    .best-item b{
+      display:block;
+      margin-bottom:4px;
+      color:var(--text);
+    }
     .footer{
       margin-top:36px;
       padding-top:14px;
@@ -439,8 +505,8 @@
     }
     .modal{
       width:min(860px, 100%);
-      background:linear-gradient(180deg, rgba(15,22,36,.98), rgba(12,19,32,.96));
-      border:1px solid rgba(138,180,255,.18);
+      background:linear-gradient(180deg, rgba(18,27,36,.98), rgba(15,23,32,.97));
+      border:1px solid rgba(103,168,255,.18);
       border-radius:18px;
       box-shadow:0 22px 60px rgba(0,0,0,.72);
       padding:18px;
@@ -465,8 +531,8 @@
       display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 12px;
     }
     .modal .meta .pill{
-      background:rgba(138,180,255,.10);
-      border-color:rgba(138,180,255,.22);
+      background:rgba(103,168,255,.10);
+      border-color:rgba(103,168,255,.22);
       color:#eef5ff;
     }
     .modal .bullets li{color:#eef5ff}
@@ -493,10 +559,9 @@
         </div>
       </div>
       <nav>
-        <a href="#about">About</a>
+        <a href="#bestat">What I Do</a>
         <a href="#featured">Work</a>
-        <a href="#security">AI Security</a>
-        <a href="#systems">Positioning</a>
+        <a href="#bestat">Focus</a>
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
         <a href="#education">Education</a>
@@ -511,22 +576,26 @@
       <div class="card hero-main">
         <h1>AI Decision Systems Engineer<br/>building analytics, evaluation, and action layers</h1>
         <p class="subtitle">
-          I build AI-powered decision systems that help teams move from raw data and model output to clear business action. My work combines analytics engineering, LLM and RAG evaluation, executive dashboarding, and production-minded AI risk workflows.
+          I build analytics, LLM evaluation, and AI risk systems that turn raw data and model output into clear business action.
         </p>
 
         <div class="pillrow">
-          <div class="pill">AI Decision Systems • Decision Intelligence</div>
-          <div class="pill">LLM / RAG Evaluation • AI Safety</div>
-          <div class="pill">SQL • Python • Data Modeling</div>
-          <div class="pill">Power BI • Tableau • Executive Dashboards</div>
-          <div class="pill">Forecasting • Explainability • Deployment</div>
+          <div class="pill">AI Decision Systems</div>
+          <div class="pill">LLM / RAG Evaluation</div>
+          <div class="pill">SQL • Python • BI</div>
+          <div class="pill">Forecasting • Explainability</div>
+        </div>
+
+        <div class="proof-strip">
+          <div class="proof-item"><b>25-30%</b><span>faster decision cycles</span></div>
+          <div class="proof-item"><b>40%</b><span>better AI risk detection coverage</span></div>
+          <div class="proof-item"><b>17%</b><span>conversion lift from optimization modeling</span></div>
         </div>
 
         <div class="cta">
           <a class="btn primary" href="#featured">View Flagship Work</a>
-          <a class="btn" href="mailto:mishra.utkarsh018@gmail.com?subject=Portfolio%20Inquiry">Email Me</a>
+          <a class="btn" href="mailto:mishra.utkarsh018@gmail.com?subject=Interview%20Inquiry">Email Me</a>
           <a class="btn" href="https://www.linkedin.com/in/utkarsh-mishra-a37193160/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="btn" href="https://github.com/Utkarshm1" target="_blank" rel="noreferrer">GitHub</a>
           <a class="btn" href="resume1.pdf" target="_blank" rel="noreferrer">Download Resume</a>
         </div>
 
@@ -534,10 +603,7 @@
           <p class="eyebrow">About Me</p>
           <p>
             I design systems that answer a harder question than “what happened?”: <b style="color:var(--text);">what should we do next?</b>
-            Across analytics engineering, business intelligence, and AI evaluation work, I turn fragmented data, model output, and operational signals into decision-ready products.
-            My strongest work sits where <b style="color:var(--text);">AI systems, analytics engineering, and business decisions</b> overlap.
-            I build executive dashboards, forecasting and optimization models, LLM and RAG evaluation workflows, and trust-oriented AI risk systems that are technically credible and usable by real teams.
-            What makes this work effective is connecting data pipelines, metrics, evaluation logic, and stakeholder needs into one coherent system.
+            My strongest work sits where <b style="color:var(--text);">AI systems, analytics engineering, and business decisions</b> overlap, from executive dashboards and optimization models to LLM evaluation and trust-oriented AI risk workflows.
           </p>
         </div>
       </div>
@@ -567,6 +633,7 @@
     <!-- FEATURED -->
     <div class="section" id="featured">
       <h2>Selected Work</h2>
+      <div class="recruiter-note">Hiring for AI engineering, analytics engineering, or AI evaluation roles? Start with these three projects.</div>
       <div class="toolbar">
         <div class="chip-row" id="projectFilters">
           <button class="chip active" type="button" data-filter="all">All Work</button>
@@ -580,16 +647,16 @@
 
       <div class="portfolio-group">
         <div class="group-head">
-          <h3>Tier 1 | Flagship Systems</h3>
+          <h3>Featured Case Studies</h3>
           <p>The strongest proof of fit for AI engineering, analytics engineering, decision intelligence, and AI evaluation roles.</p>
         </div>
-        <div class="grid">
+        <div class="spotlight-grid">
           <div class="proj" data-tags="ai analytics decision" onclick="openProject('dashai')">
             <div class="title">
               <h3>DashAI | AI-Enabled Decision Intelligence Platform</h3>
               <span class="tag">Flagship</span>
             </div>
-            <div class="stack mono">(Python • Streamlit • XGBoost • SHAP • Prophet • NLP • Power BI)</div>
+            <div class="stack mono">(Decision Intelligence • Forecasting • Explainability • Power BI)</div>
             <ul class="bullets">
               <li>Unified forecasting, clustering, NLP analysis, and explainability into one modular decision layer.</li>
               <li>Automated insight generation across marketing, financial, and operational datasets, cutting manual analysis cycles by <b>30%</b>.</li>
@@ -603,7 +670,7 @@
               <h3>Hybrid LLM Evaluation Engine</h3>
               <span class="tag">Flagship</span>
             </div>
-            <div class="stack mono">(Python • Local Embeddings • Rule Engine • Threshold Tuning)</div>
+            <div class="stack mono">(LLM Evaluation • Semantic Scoring • Rule Validation • Python)</div>
             <ul class="bullets">
               <li>Combined embedding-based semantic scoring with deterministic validation to evaluate LLM outputs more reliably.</li>
               <li>Built a multi-stage pipeline for intent detection, semantic similarity, and exploit detection.</li>
@@ -617,7 +684,7 @@
               <h3>AI Risk Intelligence Dashboard</h3>
               <span class="tag">Flagship</span>
             </div>
-            <div class="stack mono">(Python • Streamlit • Plotly • OWASP LLM Top 10 • MITRE ATLAS)</div>
+            <div class="stack mono">(AI Risk Scoring • LLM Security • Governance Reporting • OWASP)</div>
             <ul class="bullets">
               <li>Built a structured AI security scoring system for chatbots, RAG apps, and agentic workflows.</li>
               <li>Mapped model weaknesses to OWASP and MITRE-aligned categories for decision-level governance visibility.</li>
@@ -625,13 +692,15 @@
             </ul>
             <div class="preview">Click to explore the scoring framework, tracked metrics, and dashboard logic.</div>
           </div>
+        </div>
 
+        <div class="grid">
           <div class="proj" data-tags="ai trust security" onclick="openProject('prompthalo')">
             <div class="title">
               <h3>AI Red-Team CTF Platform</h3>
               <span class="tag">Security</span>
             </div>
-            <div class="stack mono">(FastAPI • React • Hybrid Evaluator • SQLite • Ollama / RAG / Agent Runtimes)</div>
+            <div class="stack mono">(Prompt Injection • RAG Security • Agent Safety • Sandbox Evaluation)</div>
             <ul class="bullets">
               <li>Built a staged AI security battleground for prompt injection, RAG boundary crossing, agent abuse, and sandbox policy testing.</li>
               <li>Designed a gateway + portal architecture that keeps internal challenge engines private behind one controlled public surface.</li>
@@ -645,7 +714,7 @@
               <h3>AMIREAL | Data Integrity & Media Verification Infrastructure</h3>
               <span class="tag">Trust</span>
             </div>
-            <div class="stack mono">(Node.js • FastAPI • Cryptographic Hashing • Metadata Validation • Verification API)</div>
+            <div class="stack mono">(Media Authenticity • Provenance Tracking • Tamper Detection • Verification)</div>
             <ul class="bullets">
               <li>Implemented tamper-evident hashing to create immutable fingerprints for media asset verification.</li>
               <li>Built a verification pipeline with metadata checks, provenance logic, and API-based authenticity lookups.</li>
@@ -659,7 +728,7 @@
               <h3>Decision Automation AI | Churn Action System</h3>
               <span class="tag">Flagship</span>
             </div>
-            <div class="stack mono">(Python • Logistic Regression • Prescriptive Analytics • SaaS Simulation)</div>
+            <div class="stack mono">(Churn Prediction • Prescriptive Analytics • Retention • Revenue Impact)</div>
             <ul class="bullets">
               <li>Built a churn-risk prediction system that translated scores into prioritized retention actions.</li>
               <li>Modeled customer health using usage, revenue, login behavior, and support-ticket features over a 10K+ record SaaS dataset.</li>
@@ -672,7 +741,7 @@
 
       <div class="portfolio-group">
         <div class="group-head">
-          <h3>Tier 2 | Applied AI & Analytics</h3>
+          <h3>Applied AI & Analytics</h3>
           <p>Broader applied work that reinforces product thinking, technical breadth, and measurable business outcomes.</p>
         </div>
         <div class="grid">
@@ -681,7 +750,7 @@
               <h3>ElecKart | Marketing Decision Optimization Engine</h3>
               <span class="tag">Impact</span>
             </div>
-            <div class="stack mono">(Python • SQL • Regression Modeling • Scenario Simulation • Power BI)</div>
+            <div class="stack mono">(Marketing Mix Modeling • Attribution • Budget Optimization • SQL)</div>
             <ul class="bullets">
               <li>Built attribution + optimization framework across multi-channel spend data.</li>
               <li>Improved conversion performance by <b>17%</b>; projected ~<b>12%</b> ROI uplift.</li>
@@ -695,7 +764,7 @@
               <h3>Cloud-Based Streaming Pipeline</h3>
               <span class="tag">Scale</span>
             </div>
-            <div class="stack mono">(Azure Event Hubs • Databricks • Synapse • Streaming Analytics)</div>
+            <div class="stack mono">(Streaming Data Engineering • Real-Time Monitoring • Anomaly Detection • Azure)</div>
             <ul class="bullets">
               <li>Engineered a real-time event pipeline processing <b>100K+</b> records for downstream monitoring and anomaly workflows.</li>
               <li>Reduced anomaly detection latency by <b>30%</b> and improved data accuracy by <b>17%</b>.</li>
@@ -709,7 +778,7 @@
               <h3>FIFA World Cup Sentiment Analysis</h3>
               <span class="tag">NLP</span>
             </div>
-            <div class="stack mono">(Python • BERT • NLP • Trend Analysis • Visualization)</div>
+            <div class="stack mono">(Sentiment Analysis • NLP • BERT • Trend Detection)</div>
             <ul class="bullets">
               <li>Processed large-scale fan commentary to quantify sentiment by team, event, and tournament phase.</li>
               <li>Used BERT-based sentiment classification to capture public reaction patterns beyond keyword rules.</li>
@@ -723,7 +792,7 @@
               <h3>Real-Time Speech Translation System</h3>
               <span class="tag">Multimodal</span>
             </div>
-            <div class="stack mono">(Speech-to-Text • NLP Translation • Text-to-Speech • Embeddings)</div>
+            <div class="stack mono">(Speech Translation • Multimodal AI • Context-Aware NLP • Embeddings)</div>
             <ul class="bullets">
               <li>Connected speech recognition, translation, and text-to-speech into a real-time multilingual pipeline.</li>
               <li>Added embedding-based context refinement to improve meaning preservation across turns.</li>
@@ -737,7 +806,7 @@
               <h3>Keyword Gap Analysis Engine</h3>
               <span class="tag">Growth</span>
             </div>
-            <div class="stack mono">(Python • SEO Analytics • Competitive Analysis • Clustering)</div>
+            <div class="stack mono">(SEO Analytics • Competitive Intelligence • Keyword Mapping • Content Strategy)</div>
             <ul class="bullets">
               <li>Built a competitor benchmarking workflow to identify high-value keyword gaps and ranking opportunities.</li>
               <li>Grouped missing opportunities into content clusters to prioritize SEO execution.</li>
@@ -751,7 +820,7 @@
               <h3>NLP Text Summarization System</h3>
               <span class="tag">NLP</span>
             </div>
-            <div class="stack mono">(Python • NLTK • spaCy • TextRank • Evaluation)</div>
+            <div class="stack mono">(Text Summarization • NLP Evaluation • Compression • spaCy)</div>
             <ul class="bullets">
               <li>Built an automated summarization pipeline for long-form text and news-style content.</li>
               <li>Compared extractive approaches across readability, compression, and information retention.</li>
@@ -765,7 +834,7 @@
               <h3>Instacart Market Basket Analysis</h3>
               <span class="tag">Retail</span>
             </div>
-            <div class="stack mono">(Python • Association Rules • Clustering • Retail Analytics)</div>
+            <div class="stack mono">(Market Basket Analysis • Association Rules • Cross-Sell • Retail Analytics)</div>
             <ul class="bullets">
               <li>Analyzed co-purchase behavior to identify product affinities and bundling opportunities.</li>
               <li>Used association rules and clustering to support cross-sell strategy recommendations.</li>
@@ -778,7 +847,7 @@
 
       <div class="portfolio-group">
         <div class="group-head">
-          <h3>Tier 3 | Foundations, Cloud, and Capability Proof</h3>
+          <h3>Foundations & Supporting Work</h3>
           <p>Supporting work that rounds out the portfolio without competing with the strongest recruiter-facing projects.</p>
         </div>
         <div class="grid">
@@ -787,7 +856,7 @@
               <h3>GeminiLLM NLP System</h3>
               <span class="tag">LLM</span>
             </div>
-            <div class="stack mono">(BigQuery • LLM Pipelines • Scalable Inference • NLP)</div>
+            <div class="stack mono">(LLM Pipelines • Scalable NLP • Cloud Processing • BigQuery)</div>
             <ul class="bullets">
               <li>Designed a scalable NLP inference workflow over large datasets using cloud-native processing.</li>
               <li>Connected LLM-based text analysis to warehouse-scale data operations.</li>
@@ -801,7 +870,7 @@
               <h3>Inventory Forecasting System</h3>
               <span class="tag">Forecasting</span>
             </div>
-            <div class="stack mono">(Python • Time Series • Demand Planning • Forecast Evaluation)</div>
+            <div class="stack mono">(Demand Forecasting • Time-Series Modeling • Inventory Planning • Python)</div>
             <ul class="bullets">
               <li>Built demand forecasting models to support inventory planning and stock-level decisions.</li>
               <li>Applied time-series methods to estimate future demand under changing business conditions.</li>
@@ -815,7 +884,7 @@
               <h3>Data Center TCO | Distributed vs Monolithic Cost Modeling</h3>
               <span class="tag">Decision Model</span>
             </div>
-            <div class="stack mono">(Power BI • Excel • SQL • Cost Modeling)</div>
+            <div class="stack mono">(Cost Modeling • TCO Analysis • Scenario Planning • Power BI)</div>
             <ul class="bullets">
               <li>Modeled total cost of ownership across cities and operating scenarios.</li>
               <li>Built executive dashboards to compare cost drivers and savings levers.</li>
@@ -829,7 +898,7 @@
               <h3>E-Commerce Database Management System</h3>
               <span class="tag">Data Model</span>
             </div>
-            <div class="stack mono">(SQL • Data Modeling • Backend Logic • Transaction Design)</div>
+            <div class="stack mono">(Database Design • Relational Modeling • Backend Logic • SQL)</div>
             <ul class="bullets">
               <li>Designed a relational system to manage products, availability, orders, and delivery timelines.</li>
               <li>Modeled core entities and workflows to support reliable e-commerce operations.</li>
@@ -843,8 +912,8 @@
               <h3>Fashion MNIST Image Classification</h3>
               <span class="tag">CV</span>
             </div>
-            <div class="stack mono">(Python • CNN • Data Augmentation • Regularization)</div>
-            <ul class="bullets">
+            <div class="stack mono">(Computer Vision • Image Classification • CNNs • Generalization)</div>
+          <ul class="bullets">
               <li>Built a convolutional image classifier for apparel recognition using Fashion MNIST.</li>
               <li>Improved generalization through augmentation and regularization strategies.</li>
               <li>Showed strong computer-vision fundamentals in model training and evaluation.</li>
@@ -855,37 +924,28 @@
       </div>
     </div>
 
-    <!-- AI SECURITY -->
-    <div class="section" id="security">
-      <h2>AI Security & Infrastructure</h2>
+    <!-- BEST AT -->
+    <div class="section" id="bestat">
+      <h2>What I'm Best At</h2>
       <div class="card">
-        <ul class="bullets">
-          <li>Designed and executed AI model evaluation workflows for chatbots, RAG systems, and agentic AI to surface prompt injection and retrieval-layer vulnerabilities.</li>
-          <li>Built red-team / blue-team validation frameworks to simulate real-world attack scenarios and assess model robustness.</li>
-          <li>Evaluated system behavior across retrieval and generation layers to uncover access-control gaps, security blind spots, and boundary failures.</li>
-          <li>Implemented a dual-instance AWS setup separating GPU inference from application services to improve isolation, scalability, and operational resilience.</li>
-          <li>Deployed containerized AI services using Docker in sandboxed environments to support controlled testing and repeatable model evaluation.</li>
-        </ul>
-        <div class="line"></div>
-        <div class="list-inline">
-          <span>Focus Areas:</span>
-          <span>RAG evaluation</span>
-          <span>• Prompt injection testing</span>
-          <span>• Red/blue-team workflows</span>
-          <span>• Model/service isolation</span>
-          <span>• Containerized deployments</span>
+        <div class="best-list">
+          <div class="best-item">
+            <b>AI decision systems that drive action</b>
+            I build analytics products that go beyond reporting, combining modeling, dashboards, and recommendation logic so teams can act on the output.
+          </div>
+          <div class="best-item">
+            <b>LLM, RAG, and AI safety evaluation</b>
+            I design structured evaluation workflows for prompt injection, retrieval abuse, agent misuse, and model-risk visibility instead of relying on surface-level demos.
+          </div>
+          <div class="best-item">
+            <b>Business translation with technical credibility</b>
+            I connect data pipelines, metrics, and model behavior to decisions leaders actually care about, without losing technical rigor underneath.
+          </div>
         </div>
-      </div>
-    </div>
-
-    <!-- ADDITIONAL SYSTEMS -->
-    <div class="section" id="systems">
-      <h2>Positioning</h2>
-      <div class="card">
-        <p style="margin:0; color:var(--muted); font-size:15px;">
-          My strongest fit is at the intersection of <b style="color:var(--text);">AI systems, analytics engineering, and decision intelligence</b>.
-          I am most valuable when the work requires both technical depth and business translation: building dashboards leaders actually use, evaluating LLM and RAG systems beyond surface metrics, and designing data products that recommend action rather than just report activity.
-        </p>
+        <div class="line"></div>
+        <div style="color:var(--muted); font-size:14px;">
+          Hiring for AI Engineer, Analytics Engineer, BI, Decision Intelligence, or AI Evaluation roles? The projects above are the strongest starting points for an interview conversation.
+        </div>
       </div>
     </div>
 
@@ -1059,7 +1119,7 @@
         <div class="note" id="contactNote"></div>
         <div class="line"></div>
         <div style="color:var(--muted); font-size:13px;">
-          If you’re hiring for AI engineering, analytics engineering, BI, decision intelligence, or AI evaluation roles, I’m happy to share deeper walkthroughs of the systems above and the tradeoffs behind them.
+          Hiring for AI engineering, analytics engineering, BI, decision intelligence, or AI evaluation roles? I’m happy to share deeper walkthroughs of the projects above and the tradeoffs behind them.
         </div>
       </div>
     </div>
@@ -1082,7 +1142,7 @@
     const PROJECTS = {
       dashai: {
         title: "DashAI | AI-Enabled Decision Intelligence Platform",
-        stack: ["Python","Streamlit","XGBoost","Prophet","SHAP","NLP","Power BI"],
+        stack: ["Decision Intelligence","Forecasting","Explainability","Recommendation Systems","NLP","Executive Dashboards","Python","Streamlit","XGBoost","Prophet","SHAP","Power BI"],
         summary: "A modular decision intelligence system combining forecasting, segmentation, NLP analysis, and explainability to support scenario-driven business decisions.",
         bullets: [
           "Architected an end-to-end workflow spanning ingestion, feature engineering, forecasting, NLP analysis, and SHAP-based explainability.",
@@ -1098,7 +1158,7 @@
       },
       airisk: {
         title: "AI Risk Intelligence Dashboard",
-        stack: ["Python","Streamlit","Plotly","OWASP LLM Top 10","MITRE ATLAS"],
+        stack: ["AI Risk Scoring","LLM Security Evaluation","Governance Reporting","OWASP Mapping","Threat Analysis","Python","Streamlit","Plotly","MITRE ATLAS"],
         summary: "A risk intelligence system for evaluating AI application vulnerabilities and translating test outcomes into governance-ready visibility.",
         bullets: [
           "Designed a structured risk scoring framework aligned to OWASP LLM Top 10 and MITRE ATLAS concepts.",
@@ -1112,11 +1172,11 @@
       },
       prompthalo: {
         title: "AI Red-Team CTF Platform",
-        stack: ["FastAPI","React","Hybrid Evaluator","SQLite","Ollama","LightRAG","Agent Runtime Testing"],
+        stack: ["Prompt Injection Testing","RAG Security Evaluation","Agent Abuse Simulation","Sandbox Boundary Testing","FastAPI","React","Hybrid Evaluator","SQLite"],
         summary: "A controlled AI red-team platform where users progress through staged prompt injection, RAG boundary, agent abuse, and sandbox security challenges.",
         bullets: [
           "Built a two-surface architecture with a public React portal and a private FastAPI gateway that shields internal challenge engines behind one secure interface.",
-          "Designed sequential battleground stages covering retail prompt injection, restricted RAG retrieval crossing, finance-agent abuse, and sandbox boundary testing.",
+          "Designed four realistic attack scenarios: prompt injection against a retail assistant, restricted retrieval access in a RAG system, approval bypass in a finance agent workflow, and sandbox boundary abuse in a local runtime.",
           "Implemented a spec-driven hybrid evaluator with hard gates, deterministic exploit checks, semantic scoring, anti-abuse logic, telemetry, and progression control.",
           "Added durable progress tracking, invite-based access, hint penalties, partial credit, and offline-capable fallback logic so the environment remains playable without external runtimes."
         ],
@@ -1126,7 +1186,7 @@
       },
       hybrid: {
         title: "Hybrid LLM Evaluation Engine",
-        stack: ["Python","Local Embeddings","Rule-Based Validation","Threshold Tuning"],
+        stack: ["LLM Evaluation","Semantic Scoring","Rule-Based Validation","Exploit Detection","Local AI Testing","Python","Local Embeddings","Threshold Tuning"],
         summary: "A custom evaluation framework that combines semantic scoring and deterministic checks to make LLM assessment more consistent and attack-aware.",
         bullets: [
           "Implemented embedding-based similarity scoring using local models to avoid paid API dependencies.",
@@ -1140,7 +1200,7 @@
       },
       churn: {
         title: "Decision Automation AI | Churn Action System",
-        stack: ["Python","Logistic Regression","Prescriptive Analytics","Synthetic SaaS Data"],
+        stack: ["Churn Prediction","Prescriptive Analytics","Retention Prioritization","Revenue Impact Modeling","Python","Logistic Regression","Synthetic SaaS Data"],
         summary: "A predictive and prescriptive retention system that identifies churn risk and recommends business actions based on customer priority.",
         bullets: [
           "Generated a 10K+ record SaaS dataset to simulate realistic retention, engagement, and revenue patterns.",
@@ -1154,7 +1214,7 @@
       },
       eleckart: {
         title: "ElecKart | Marketing Decision Optimization Engine",
-        stack: ["Python","SQL","Regression Modeling","Power BI","Scenario Simulation"],
+        stack: ["Marketing Mix Modeling","Attribution Analysis","Budget Optimization","Scenario Planning","BI Reporting","Python","SQL","Regression Modeling","Power BI"],
         summary: "A marketing analytics system that quantifies channel impact and supports budget allocation decisions through scenario simulation.",
         bullets: [
           "Built a regression-based attribution framework over multi-channel spend and performance history.",
@@ -1168,7 +1228,7 @@
       },
       sentiment: {
         title: "FIFA World Cup Sentiment Analysis",
-        stack: ["Python","BERT","NLP","Visualization"],
+        stack: ["Sentiment Analysis","NLP","Transformer Models","Trend Detection","Audience Insights","Python","BERT","Visualization"],
         summary: "An NLP analytics project that measured tournament sentiment across teams, events, and fan reactions using transformer-based classification.",
         bullets: [
           "Processed large-scale text data capturing public commentary around FIFA World Cup events.",
@@ -1182,7 +1242,7 @@
       },
       keyword: {
         title: "Keyword Gap Analysis Engine",
-        stack: ["Python","SEO Analytics","Competitive Analysis","Clustering"],
+        stack: ["SEO Analytics","Competitive Intelligence","Keyword Opportunity Mapping","Content Strategy","Python","Clustering"],
         summary: "An SEO analytics workflow that identifies missed ranking opportunities by comparing competitor coverage and grouping gaps into action areas.",
         bullets: [
           "Compared brand and competitor keyword portfolios to uncover ranking gaps.",
@@ -1195,7 +1255,7 @@
       },
       streaming: {
         title: "Cloud-Based Streaming Pipeline",
-        stack: ["Azure Event Hubs","Databricks","Synapse","Streaming Analytics"],
+        stack: ["Streaming Data Engineering","Real-Time Monitoring","Anomaly Detection","Cloud Analytics","Azure Event Hubs","Databricks","Synapse"],
         summary: "A real-time cloud data pipeline for processing high-volume events and supporting faster anomaly detection and monitoring decisions.",
         bullets: [
           "Built an event-driven architecture using Azure services to process more than 100K records.",
@@ -1208,7 +1268,7 @@
       },
       basket: {
         title: "Instacart Market Basket Analysis",
-        stack: ["Python","Association Rules","Clustering","Retail Analytics"],
+        stack: ["Market Basket Analysis","Association Rules","Cross-Sell Strategy","Retail Analytics","Python","Clustering"],
         summary: "A retail analytics project that surfaced product affinities and purchasing behavior to support bundling and cross-sell strategy.",
         bullets: [
           "Applied association-rule mining to identify frequently co-purchased products.",
@@ -1221,7 +1281,7 @@
       },
       summarization: {
         title: "NLP Text Summarization System",
-        stack: ["Python","NLTK","spaCy","TextRank","Evaluation"],
+        stack: ["Text Summarization","NLP Evaluation","Information Compression","Language Processing","Python","NLTK","spaCy","TextRank"],
         summary: "An automated summarization engine for long-form text that benchmarks multiple extractive approaches for concise, readable output.",
         bullets: [
           "Built a summarization pipeline using NLTK, spaCy, and TextRank-based methods.",
@@ -1234,7 +1294,7 @@
       },
       speech: {
         title: "Real-Time Speech Translation System",
-        stack: ["Speech Recognition","NLP Translation","Text-to-Speech","Embeddings"],
+        stack: ["Speech Translation","Multimodal AI","Context-Aware NLP","Real-Time Communication","Speech Recognition","Text-to-Speech","Embeddings"],
         summary: "A multimodal AI pipeline that converts live speech into translated audio with context-aware refinement.",
         bullets: [
           "Connected speech recognition, translation, and text-to-speech into one end-to-end workflow.",
@@ -1247,7 +1307,7 @@
       },
       fashion: {
         title: "Fashion MNIST Image Classification",
-        stack: ["Python","CNN","Data Augmentation","Regularization"],
+        stack: ["Computer Vision","Image Classification","CNN Modeling","Model Generalization","Python","Data Augmentation","Regularization"],
         summary: "A computer-vision project focused on image classification fundamentals using convolutional networks and training optimization techniques.",
         bullets: [
           "Built a CNN model to classify apparel categories from Fashion MNIST images.",
@@ -1260,7 +1320,7 @@
       },
       gemini: {
         title: "GeminiLLM NLP System",
-        stack: ["BigQuery","LLM Pipelines","Cloud NLP","Scalable Inference"],
+        stack: ["LLM Pipelines","Scalable NLP Inference","Cloud Data Processing","Warehouse-Scale AI","BigQuery"],
         summary: "A scalable NLP processing workflow that uses cloud data infrastructure to run LLM-style text analysis over large datasets.",
         bullets: [
           "Built a large-scale inference workflow using BigQuery-backed processing patterns.",
@@ -1273,7 +1333,7 @@
       },
       inventory: {
         title: "Inventory Forecasting System",
-        stack: ["Python","Time Series","Demand Forecasting","Planning Analytics"],
+        stack: ["Demand Forecasting","Time-Series Modeling","Inventory Planning","Operations Analytics","Python"],
         summary: "A forecasting project that estimates demand trends to support inventory planning and operational decisions.",
         bullets: [
           "Built demand-forecasting models using time-series techniques suited to inventory scenarios.",
@@ -1286,7 +1346,7 @@
       },
       dbms: {
         title: "E-Commerce Database Management System",
-        stack: ["SQL","Database Design","Backend Logic","Relational Modeling"],
+        stack: ["Database Design","Relational Modeling","Backend Data Logic","Transaction Workflows","SQL"],
         summary: "A foundational backend and data-modeling project for managing products, availability, orders, and delivery workflows in an e-commerce setting.",
         bullets: [
           "Designed relational schemas for products, inventory, orders, and delivery tracking.",
@@ -1299,7 +1359,7 @@
       },
       amireal: {
         title: "AMIREAL | Data Integrity & Media Verification Infrastructure",
-        stack: ["Node.js","FastAPI","Cryptographic Hashing","Metadata Validation","Verification API"],
+        stack: ["Media Authenticity","Provenance Tracking","Tamper Detection","Verification Workflows","Trust Infrastructure","Node.js","FastAPI","Metadata Validation"],
         summary: "A media-authenticity platform focused on provenance, tamper detection, and verification workflows for increasingly AI-generated digital content.",
         bullets: [
           "Implemented cryptographic hashing to generate immutable fingerprints for file-level integrity validation.",
@@ -1313,7 +1373,7 @@
       },
       tco: {
         title: "Data Center TCO | Distributed vs Monolithic Cost Modeling",
-        stack: ["Power BI","Excel","SQL","Cost Modeling"],
+        stack: ["Cost Modeling","TCO Analysis","Scenario Comparison","Executive Decision Support","Power BI","Excel","SQL"],
         summary: "A decision model comparing operating factors and total cost of ownership under different infrastructure deployment strategies.",
         bullets: [
           "Modeled cost drivers across locations and operating assumptions to surface savings levers.",
