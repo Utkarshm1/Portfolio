@@ -75,7 +75,7 @@
       display:grid;
       grid-template-columns: 1.2fr .8fr;
       gap:18px;
-      align-items:stretch;
+      align-items:start;
     }
     @media (max-width: 860px){
       .hero{grid-template-columns:1fr}
@@ -87,6 +87,11 @@
       border-radius:var(--radius);
       box-shadow:var(--shadow);
       padding:18px;
+    }
+    .hero-main{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
     }
     h1{
       margin:0 0 8px 0;
@@ -398,6 +403,22 @@
       font-size:12px;
       min-height:18px;
     }
+    .hero-about{
+      border-top:1px solid var(--line);
+      padding-top:14px;
+    }
+    .eyebrow{
+      margin:0 0 8px 0;
+      color:var(--muted2);
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+    }
+    .hero-about p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+    }
     .footer{
       margin-top:36px;
       padding-top:14px;
@@ -487,7 +508,7 @@
   <div class="wrap">
     <!-- HERO -->
     <div class="hero">
-      <div class="card">
+      <div class="card hero-main">
         <h1>AI Decision Systems Engineer<br/>building analytics, evaluation, and action layers</h1>
         <p class="subtitle">
           I build AI-powered decision systems that help teams move from raw data and model output to clear business action. My work combines analytics engineering, LLM and RAG evaluation, executive dashboarding, and production-minded AI risk workflows.
@@ -507,6 +528,14 @@
           <a class="btn" href="https://www.linkedin.com/in/utkarsh-mishra-a37193160/" target="_blank" rel="noreferrer">LinkedIn</a>
           <a class="btn" href="https://github.com/Utkarshm1" target="_blank" rel="noreferrer">GitHub</a>
           <a class="btn" href="resume1.pdf" target="_blank" rel="noreferrer">Download Resume</a>
+        </div>
+
+        <div class="hero-about">
+          <p class="eyebrow">About Me</p>
+          <p>
+            I design systems that answer a harder question than “what happened?”: <b style="color:var(--text);">what should we do next?</b>
+            Across analytics engineering, business intelligence, and AI evaluation work, I turn fragmented data, model output, and operational signals into decision-ready products.
+          </p>
         </div>
       </div>
 
@@ -537,9 +566,8 @@
       <h2>About</h2>
       <div class="card">
         <p style="margin:0; color:var(--muted); font-size:15px;">
-          I design systems that answer a harder question than “what happened?”: <b style="color:var(--text);">what should we do next?</b>
-          Across analytics engineering, business intelligence, and AI evaluation work, I turn fragmented data, model output, and operational signals into decision-ready products.
-          That includes executive dashboards, forecasting and optimization models, LLM and RAG evaluation workflows, and trust-oriented AI risk systems built to be usable by both technical teams and business stakeholders.
+          My strongest work sits where <b style="color:var(--text);">AI systems, analytics engineering, and business decisions</b> overlap.
+          I build executive dashboards, forecasting and optimization models, LLM and RAG evaluation workflows, and trust-oriented AI risk systems that are technically credible and usable by real teams.
         </p>
       </div>
     </div>
