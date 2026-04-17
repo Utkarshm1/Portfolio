@@ -642,7 +642,7 @@
           <button class="chip" type="button" data-filter="trust">Trust & Security</button>
           <button class="chip" type="button" data-filter="decision">Decision Models</button>
         </div>
-        <div class="statline" id="projectCount">Showing 18 portfolio systems</div>
+        <div class="statline" id="projectCount">Showing 19 portfolio systems</div>
       </div>
 
       <div class="portfolio-group">
@@ -651,6 +651,20 @@
           <p>The strongest proof of fit for AI engineering, analytics engineering, decision intelligence, and AI evaluation roles.</p>
         </div>
         <div class="spotlight-grid">
+          <div class="proj" data-tags="ai analytics decision" onclick="openProject('cryptoagent')">
+            <div class="title">
+              <h3>Crypto Intelligence Agent</h3>
+              <span class="tag">Flagship</span>
+            </div>
+            <div class="stack mono">(LLM Tool Calling • MCP Wrapper • FastAPI • Streamlit • Local Ollama)</div>
+            <ul class="bullets">
+              <li>Built an agentic crypto decision-support application with a Streamlit frontend, FastAPI agent backend, and MCP-style market-data wrapper.</li>
+              <li>Grounded live answers in normalized CoinGecko data using tool-calling, caching, timeout guards, and graceful fallbacks.</li>
+              <li>Added a lightweight dashboard with comparison views, market summary panels, candlestick charts, and execution-trace transparency.</li>
+            </ul>
+            <div class="preview">Click to view the architecture, reliability choices, GitHub repo, and demo video.</div>
+          </div>
+
           <div class="proj" data-tags="ai analytics decision" onclick="openProject('dashai')">
             <div class="title">
               <h3>DashAI | AI-Enabled Decision Intelligence Platform</h3>
@@ -695,7 +709,7 @@
         </div>
 
         <div class="grid">
-          <div class="proj" data-tags="ai trust security" onclick="openProject('prompthalo')">
+          <div class="proj" data-tags="ai trust security" onclick="openProject('tugofwar')">
             <div class="title">
               <h3>AI Red-Team CTF Platform</h3>
               <span class="tag">Security</span>
@@ -1140,6 +1154,21 @@
 
   <script>
     const PROJECTS = {
+      cryptoagent: {
+        title: "Crypto Intelligence Agent",
+        stack: ["Agentic Web App","LLM Tool Calling","MCP-Style Wrapper","FastAPI","Streamlit","Local Ollama","CoinGecko API","Dashboard Visualization","Explainability"],
+        summary: "A local-first crypto intelligence application that combines LLM tool-calling, a wrapper microservice, and a lightweight dashboard to support grounded market exploration.",
+        bullets: [
+          "Designed a three-layer architecture with a Streamlit frontend, FastAPI agent backend, and FastAPI MCP-style wrapper that normalizes third-party crypto market data.",
+          "Implemented tool-driven flows for price lookup, asset comparison, trending coins, market summary, and exploratory prompts while preventing live-data hallucination.",
+          "Added short-term caching, timeout controls, and normalized rate-limit handling so the app stays demo-resilient under free API constraints.",
+          "Built a decision-support dashboard with comparison cards, top-mover views, daily candlestick charts, and execution-trace visibility for safer interpretability."
+        ],
+        links: [
+          { label: "GitHub Repo", url: "https://github.com/Utkarshm1/Crypto-intelligence-agent" },
+          { label: "Demo Video", url: "https://github.com/Utkarshm1/Crypto-intelligence-agent/blob/main/docs/demo/crypto-intelligence-agent-demo.mp4" }
+        ]
+      },
       dashai: {
         title: "DashAI | AI-Enabled Decision Intelligence Platform",
         stack: ["Decision Intelligence","Forecasting","Explainability","Recommendation Systems","NLP","Executive Dashboards","Python","Streamlit","XGBoost","Prophet","SHAP","Power BI"],
@@ -1170,7 +1199,7 @@
           { label: "GitHub (optional)", url: "YOUR_AI_RISK_GITHUB" }
         ]
       },
-      prompthalo: {
+      tugofwar: {
         title: "AI Red-Team CTF Platform",
         stack: ["Prompt Injection Testing","RAG Security Evaluation","Agent Abuse Simulation","Sandbox Boundary Testing","FastAPI","React","Hybrid Evaluator","SQLite"],
         summary: "A controlled AI red-team platform where users progress through staged prompt injection, RAG boundary, agent abuse, and sandbox security challenges.",
@@ -1181,7 +1210,7 @@
           "Added durable progress tracking, invite-based access, hint penalties, partial credit, and offline-capable fallback logic so the environment remains playable without external runtimes."
         ],
         links: [
-          { label: "GitHub (optional)", url: "YOUR_PROMPTHALO_GITHUB" }
+          { label: "GitHub (optional)", url: "YOUR_TUGOFWAR_GITHUB" }
         ]
       },
       hybrid: {
