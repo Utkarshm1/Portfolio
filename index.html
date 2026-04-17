@@ -141,6 +141,194 @@
       color:var(--muted2);
       font-size:12px;
     }
+    .section-intro{
+      color:var(--muted);
+      font-size:14px;
+      margin:0 0 14px 0;
+      max-width:72ch;
+    }
+    .service-grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:14px;
+    }
+    .service-card{
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px;
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      box-shadow:var(--shadow);
+    }
+    .service-card h3{
+      margin:0 0 8px;
+      font-size:16px;
+    }
+    .service-card p{
+      margin:0 0 12px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .service-tools{
+      color:var(--muted2);
+      font-size:12px;
+    }
+    .featured-grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:16px;
+    }
+    .featured-card{
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:18px;
+      background:linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
+      box-shadow:var(--shadow);
+      transition:transform .14s ease, border-color .14s ease, box-shadow .14s ease;
+    }
+    .featured-card:hover{
+      transform:translateY(-3px);
+      border-color:rgba(103,168,255,.34);
+      box-shadow:0 18px 42px rgba(0,0,0,.42);
+    }
+    .featured-head{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:flex-start;
+      margin-bottom:10px;
+    }
+    .featured-head h3{
+      margin:0;
+      font-size:18px;
+      line-height:1.22;
+    }
+    .problem-line{
+      color:var(--muted);
+      font-size:14px;
+      margin:0 0 12px 0;
+    }
+    .stack-icons{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-bottom:12px;
+    }
+    .stack-badge{
+      font-size:12px;
+      color:var(--text);
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+    }
+    .featured-impact{
+      margin-top:12px;
+      padding:10px 12px;
+      border-radius:14px;
+      background:rgba(103,168,255,.08);
+      border:1px solid rgba(103,168,255,.18);
+      color:#eef5ff;
+      font-size:13px;
+    }
+    .action-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:14px;
+    }
+    .btn.secondary{
+      background:rgba(255,255,255,.025);
+    }
+    .btn.disabled{
+      opacity:.55;
+      cursor:not-allowed;
+      pointer-events:none;
+    }
+    .catalog-shell{
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.015));
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+    .catalog-toggle{
+      width:100%;
+      border:0;
+      background:none;
+      color:var(--text);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:18px 20px;
+      font-size:16px;
+      cursor:pointer;
+    }
+    .catalog-toggle span:last-child{
+      color:var(--accent2);
+      font-size:20px;
+      transition:transform .16s ease;
+    }
+    .catalog-shell.open .catalog-toggle span:last-child{
+      transform:rotate(45deg);
+    }
+    .catalog-content{
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .35s ease;
+    }
+    .catalog-inner{
+      padding:0 20px 20px;
+    }
+    .catalog-toolbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      margin:6px 0 14px;
+    }
+    .search-input{
+      width:min(320px, 100%);
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:rgba(255,255,255,.03);
+      color:var(--text);
+      padding:10px 12px;
+      font-size:14px;
+    }
+    .search-input::placeholder{
+      color:var(--muted2);
+    }
+    .simple-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:14px;
+    }
+    .catalog-card{
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:rgba(255,255,255,.02);
+      padding:14px;
+      transition:transform .12s ease, border-color .12s ease, background .12s ease;
+    }
+    .catalog-card:hover{
+      transform:translateY(-2px);
+      border-color:rgba(103,168,255,.28);
+      background:rgba(103,168,255,.06);
+    }
+    .catalog-card h3{
+      margin:0 0 8px;
+      font-size:15px;
+    }
+    .catalog-card p{
+      margin:0 0 12px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .catalog-card[hidden]{
+      display:none;
+    }
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:8px;
       padding:10px 12px;
@@ -545,6 +733,13 @@
       .card{padding:16px}
       .kv{flex-direction:column; align-items:flex-start}
     }
+    @media (max-width: 980px){
+      .featured-grid,
+      .simple-grid,
+      .service-grid{
+        grid-template-columns:1fr;
+      }
+    }
   </style>
 </head>
 
@@ -559,12 +754,9 @@
         </div>
       </div>
       <nav>
-        <a href="#bestat">What I Do</a>
-        <a href="#featured">Work</a>
-        <a href="#bestat">Focus</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#education">Education</a>
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="resume1.pdf" target="_blank" rel="noreferrer">Resume</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -572,28 +764,28 @@
 
   <div class="wrap">
     <!-- HERO -->
-    <div class="hero">
+    <div class="hero" id="home">
       <div class="card hero-main">
-        <h1>AI Decision Systems Engineer<br/>building analytics, evaluation, and action layers</h1>
+        <h1>AI &amp; Analytics Engineer | Agentic Workflow Systems</h1>
         <p class="subtitle">
-          I build analytics, LLM evaluation, and AI risk systems that turn raw data and model output into clear business action.
+          I build AI-powered decision systems, dashboards, and agentic workflows that turn messy data into actionable insights.
         </p>
 
         <div class="pillrow">
-          <div class="pill">AI Decision Systems</div>
+          <div class="pill">Agentic Workflow Systems</div>
+          <div class="pill">BI &amp; Dashboarding</div>
+          <div class="pill">Applied ML &amp; Forecasting</div>
           <div class="pill">LLM / RAG Evaluation</div>
-          <div class="pill">SQL • Python • BI</div>
-          <div class="pill">Forecasting • Explainability</div>
         </div>
 
         <div class="proof-strip">
-          <div class="proof-item"><b>25-30%</b><span>faster decision cycles</span></div>
-          <div class="proof-item"><b>40%</b><span>better AI risk detection coverage</span></div>
-          <div class="proof-item"><b>17%</b><span>conversion lift from optimization modeling</span></div>
+          <div class="proof-item"><b>30%</b><span>reduced decision latency</span></div>
+          <div class="proof-item"><b>5+</b><span>dashboards on 50K+ records</span></div>
+          <div class="proof-item"><b>15%</b><span>improved KPI accuracy</span></div>
         </div>
 
         <div class="cta">
-          <a class="btn primary" href="#featured">View Flagship Work</a>
+          <a class="btn primary" href="#projects">View Featured Projects</a>
           <a class="btn" href="mailto:mishra.utkarsh018@gmail.com?subject=Interview%20Inquiry">Email Me</a>
           <a class="btn" href="https://www.linkedin.com/in/utkarsh-mishra-a37193160/" target="_blank" rel="noreferrer">LinkedIn</a>
           <a class="btn" href="resume1.pdf" target="_blank" rel="noreferrer">Download Resume</a>
@@ -630,330 +822,298 @@
       </div>
     </div>
 
-    <!-- FEATURED -->
-    <div class="section" id="featured">
-      <h2>Selected Work</h2>
-      <div class="recruiter-note">Hiring for AI engineering, analytics engineering, or AI evaluation roles? Start with these three projects.</div>
-      <div class="toolbar">
-        <div class="chip-row" id="projectFilters">
-          <button class="chip active" type="button" data-filter="all">All Work</button>
-          <button class="chip" type="button" data-filter="ai">AI Systems</button>
-          <button class="chip" type="button" data-filter="analytics">Analytics</button>
-          <button class="chip" type="button" data-filter="trust">Trust & Security</button>
-          <button class="chip" type="button" data-filter="decision">Decision Models</button>
+    <!-- WHAT I DO -->
+    <div class="section" id="whatido">
+      <h2>What I Do</h2>
+      <p class="section-intro">I build systems that help teams move from raw data and model output to clear actions, with enough structure that recruiters can understand my fit in under five seconds.</p>
+      <div class="service-grid">
+        <div class="service-card">
+          <h3>Decision Intelligence Systems</h3>
+          <p>Design decision-support workflows that connect KPIs, models, and business actions instead of stopping at reporting.</p>
+          <div class="service-tools">Tools: Python, SQL, SHAP, KPI design, scenario modeling</div>
         </div>
-        <div class="statline" id="projectCount">Showing 19 portfolio systems</div>
+        <div class="service-card">
+          <h3>BI &amp; Dashboarding</h3>
+          <p>Build executive-friendly dashboards that make large datasets easy to scan, interpret, and trust.</p>
+          <div class="service-tools">Tools: Power BI, Tableau, DAX, Snowflake, Azure</div>
+        </div>
+        <div class="service-card">
+          <h3>Applied ML &amp; Forecasting</h3>
+          <p>Use predictive models and forecasting techniques to support planning, prioritization, and growth decisions.</p>
+          <div class="service-tools">Tools: XGBoost, Prophet, regression, time-series, Python</div>
+        </div>
+        <div class="service-card">
+          <h3>Agentic AI / RAG Systems</h3>
+          <p>Build agentic workflows and evaluation layers that ground outputs in tools, wrappers, and reliable execution paths.</p>
+          <div class="service-tools">Tools: FastAPI, Streamlit, Ollama, APIs, LLM evaluation, RAG</div>
+        </div>
       </div>
+    </div>
 
+    <!-- PROJECTS -->
+    <div class="section" id="projects">
+      <h2>Projects</h2>
+      <p class="section-intro">Featured work is visible by default. Everything else stays available inside an expandable catalog so recruiters can scan fast without losing depth.</p>
       <div class="portfolio-group">
         <div class="group-head">
-          <h3>Featured Case Studies</h3>
-          <p>The strongest proof of fit for AI engineering, analytics engineering, decision intelligence, and AI evaluation roles.</p>
+          <h3>Featured Projects</h3>
+          <p>Six recruiter-first case studies across agentic systems, dashboarding, trust infrastructure, AI security, and decision modeling.</p>
         </div>
-        <div class="spotlight-grid">
-          <div class="proj" data-tags="ai analytics decision" onclick="openProject('cryptoagent')">
-            <div class="title">
-              <h3>Crypto Intelligence Agent</h3>
-              <span class="tag">Flagship</span>
+        <div class="featured-grid">
+          <div class="featured-card">
+            <div class="featured-head">
+              <h3>Crypto Intelligence Agent (Agentic AI Workflow)</h3>
+              <span class="tag">Featured</span>
             </div>
-            <div class="stack mono">(LLM Tool Calling • MCP Wrapper • FastAPI • Streamlit • Local Ollama)</div>
+            <p class="problem-line">Problem: Crypto data is fragmented and noisy, making real-time decision-making difficult.</p>
+            <div class="stack-icons">
+              <span class="stack-badge">🤖 LLM Workflow</span>
+              <span class="stack-badge">🔌 APIs</span>
+              <span class="stack-badge">⚡ FastAPI</span>
+              <span class="stack-badge">📊 Streamlit</span>
+              <span class="stack-badge">🧠 Ollama</span>
+            </div>
             <ul class="bullets">
-              <li>Built an agentic crypto decision-support application with a Streamlit frontend, FastAPI agent backend, and MCP-style market-data wrapper.</li>
-              <li>Grounded live answers in normalized CoinGecko data using tool-calling, caching, timeout guards, and graceful fallbacks.</li>
-              <li>Added a lightweight dashboard with comparison views, market summary panels, candlestick charts, and execution-trace transparency.</li>
+              <li>Built a multi-step workflow with ingestion, reasoning, and output layers to generate structured crypto insights.</li>
+              <li>Grounded answers in tool-calling, normalized API data, and a decision-support dashboard instead of model guesses.</li>
             </ul>
-            <div class="preview">Click to view the architecture, reliability choices, GitHub repo, and demo video.</div>
-          </div>
-
-          <div class="proj" data-tags="ai trust decision" onclick="openProject('hybrid')">
-            <div class="title">
-              <h3>Hybrid LLM Evaluation Engine</h3>
-              <span class="tag">Flagship</span>
+            <div class="featured-impact"><b>Impact:</b> Automated multi-source crypto intelligence and reduced manual research through faster insight generation.</div>
+            <div class="action-row">
+              <a class="btn primary" href="https://github.com/Utkarshm1/Crypto-intelligence-agent" target="_blank" rel="noreferrer">GitHub</a>
+              <a class="btn secondary" href="https://github.com/Utkarshm1/Crypto-intelligence-agent/blob/main/docs/demo/crypto-intelligence-agent-demo.mp4" target="_blank" rel="noreferrer">Demo</a>
+              <button class="btn secondary" type="button" onclick="openProject('cryptoagent')">Details</button>
             </div>
-            <div class="stack mono">(LLM Evaluation • Semantic Scoring • Rule Validation • Python)</div>
-            <ul class="bullets">
-              <li>Combined embedding-based semantic scoring with deterministic validation to evaluate LLM outputs more reliably.</li>
-              <li>Built a multi-stage pipeline for intent detection, semantic similarity, and exploit detection.</li>
-              <li>Reduced false positives in vulnerability evaluation while improving consistency across test runs.</li>
-            </ul>
-            <div class="preview">Click to inspect the hybrid evaluation architecture and tuning approach.</div>
           </div>
-
-          <div class="proj" data-tags="ai trust security" onclick="openProject('tugofwar')">
-            <div class="title">
-              <h3>AI Red-Team CTF Platform</h3>
-              <span class="tag">Flagship</span>
+          <div class="featured-card">
+            <div class="featured-head">
+              <h3>DashAI</h3>
+              <span class="tag">Featured</span>
             </div>
-            <div class="stack mono">(Prompt Injection • RAG Security • Agent Safety • Sandbox Evaluation)</div>
-            <ul class="bullets">
-              <li>Built a staged AI security battleground for prompt injection, RAG boundary crossing, agent abuse, and sandbox policy testing.</li>
-              <li>Designed a gateway + portal architecture that keeps internal challenge engines private behind one controlled public surface.</li>
-              <li>Implemented a hybrid evaluator with hard gates, deterministic checks, semantic scoring, telemetry, and progression logic.</li>
-            </ul>
-            <div class="preview">Click to review the stage design, architecture, and AI security evaluation logic.</div>
-          </div>
-        </div>
-
-        <div class="grid">
-          <div class="proj" data-tags="ai analytics decision" onclick="openProject('dashai')">
-            <div class="title">
-              <h3>DashAI | AI-Enabled Decision Intelligence Platform</h3>
-              <span class="tag">Flagship</span>
+            <p class="problem-line">Problem: Dashboards often show what happened without helping teams decide what to do next.</p>
+            <div class="stack-icons">
+              <span class="stack-badge">📈 Forecasting</span>
+              <span class="stack-badge">🧠 Explainability</span>
+              <span class="stack-badge">📊 Power BI</span>
+              <span class="stack-badge">🐍 Python</span>
             </div>
-            <div class="stack mono">(Decision Intelligence • Forecasting • Explainability • Power BI)</div>
             <ul class="bullets">
               <li>Unified forecasting, clustering, NLP analysis, and explainability into one modular decision layer.</li>
-              <li>Automated insight generation across marketing, financial, and operational datasets, cutting manual analysis cycles by <b>30%</b>.</li>
-              <li>Delivered scenario-oriented dashboards that made model outputs usable for executive decision workflows.</li>
+              <li>Turned model output into scenario-ready dashboards with interpretable drivers and next-step logic.</li>
             </ul>
-            <div class="preview">Click to open the deeper project breakdown.</div>
-          </div>
-
-          <div class="proj" data-tags="ai trust security" onclick="openProject('airisk')">
-            <div class="title">
-              <h3>AI Risk Intelligence Dashboard</h3>
-              <span class="tag">Flagship</span>
+            <div class="featured-impact"><b>Impact:</b> Cut manual analysis cycles by 30% across operational, marketing, and financial workflows.</div>
+            <div class="action-row">
+              <span class="btn disabled">GitHub Private</span>
+              <span class="btn disabled">Demo N/A</span>
+              <button class="btn secondary" type="button" onclick="openProject('dashai')">Details</button>
             </div>
-            <div class="stack mono">(AI Risk Scoring • LLM Security • Governance Reporting • OWASP)</div>
-            <ul class="bullets">
-              <li>Built a structured AI security scoring system for chatbots, RAG apps, and agentic workflows.</li>
-              <li>Mapped model weaknesses to OWASP and MITRE-aligned categories for decision-level governance visibility.</li>
-              <li>Improved risk detection coverage by approximately <b>40%</b> through repeatable scenario evaluation.</li>
-            </ul>
-            <div class="preview">Click to explore the scoring framework, tracked metrics, and dashboard logic.</div>
           </div>
-
-          <div class="proj" data-tags="ai trust security" onclick="openProject('amireal')">
-            <div class="title">
-              <h3>AMIREAL | Data Integrity & Media Verification Infrastructure</h3>
-              <span class="tag">Trust</span>
+          <div class="featured-card">
+            <div class="featured-head">
+              <h3>AMiReal</h3>
+              <span class="tag">Featured</span>
             </div>
-            <div class="stack mono">(Media Authenticity • Provenance Tracking • Tamper Detection • Verification)</div>
+            <p class="problem-line">Problem: AI-generated media and digital assets are increasingly difficult to verify for authenticity and tampering.</p>
+            <div class="stack-icons">
+              <span class="stack-badge">🔐 Provenance</span>
+              <span class="stack-badge">🧾 Metadata</span>
+              <span class="stack-badge">⚙️ FastAPI</span>
+              <span class="stack-badge">🗂️ Trust Layer</span>
+            </div>
             <ul class="bullets">
-              <li>Implemented tamper-evident hashing to create immutable fingerprints for media asset verification.</li>
-              <li>Built a verification pipeline with metadata checks, provenance logic, and API-based authenticity lookups.</li>
-              <li>Created the foundation for AI forensics scoring and trust-layer infrastructure for digital media.</li>
+              <li>Implemented provenance checks, tamper-evident hashing, and verification workflows for media authenticity.</li>
+              <li>Created the foundation for AI forensics scoring and trust-layer infrastructure for digital content.</li>
             </ul>
-            <div class="preview">Click to view the trust architecture, ledger workflow, and roadmap.</div>
+            <div class="featured-impact"><b>Impact:</b> Built a reusable verification workflow for increasingly AI-generated digital assets.</div>
+            <div class="action-row">
+              <span class="btn disabled">GitHub Private</span>
+              <span class="btn disabled">Demo N/A</span>
+              <button class="btn secondary" type="button" onclick="openProject('amireal')">Details</button>
+            </div>
           </div>
-
-          <div class="proj" data-tags="ai analytics decision" onclick="openProject('churn')">
-            <div class="title">
-              <h3>Decision Automation AI | Churn Action System</h3>
-              <span class="tag">Flagship</span>
+          <div class="featured-card">
+            <div class="featured-head">
+              <h3>AI Risk / CTF Platform</h3>
+              <span class="tag">Featured</span>
             </div>
-            <div class="stack mono">(Churn Prediction • Prescriptive Analytics • Retention • Revenue Impact)</div>
+            <p class="problem-line">Problem: AI systems need structured testing for prompt injection, RAG misuse, and agent abuse before they can be trusted.</p>
+            <div class="stack-icons">
+              <span class="stack-badge">🛡️ AI Security</span>
+              <span class="stack-badge">🎯 Red Teaming</span>
+              <span class="stack-badge">⚡ FastAPI</span>
+              <span class="stack-badge">⚛️ React</span>
+            </div>
             <ul class="bullets">
-              <li>Built a churn-risk prediction system that translated scores into prioritized retention actions.</li>
-              <li>Modeled customer health using usage, revenue, login behavior, and support-ticket features over a 10K+ record SaaS dataset.</li>
-              <li>Connected prediction outputs to simulated MRR impact and action playbooks for business teams.</li>
+              <li>Built a staged AI security battleground covering prompt injection, RAG boundary crossing, agent abuse, and sandbox testing.</li>
+              <li>Added a hybrid evaluator with hard gates, deterministic checks, semantic scoring, telemetry, and progression logic.</li>
             </ul>
-            <div class="preview">Click to see how predictions were converted into business actions.</div>
+            <div class="featured-impact"><b>Impact:</b> Created a reusable AI security testing environment for controlled red-team evaluation.</div>
+            <div class="action-row">
+              <span class="btn disabled">GitHub Private</span>
+              <span class="btn disabled">Demo N/A</span>
+              <button class="btn secondary" type="button" onclick="openProject('tugofwar')">Details</button>
+            </div>
+          </div>
+          <div class="featured-card">
+            <div class="featured-head">
+              <h3>ElecKart MMM</h3>
+              <span class="tag">Featured</span>
+            </div>
+            <p class="problem-line">Problem: Marketing teams need clearer attribution and budget guidance across noisy multi-channel spend data.</p>
+            <div class="stack-icons">
+              <span class="stack-badge">📣 MMM</span>
+              <span class="stack-badge">📊 SQL</span>
+              <span class="stack-badge">📈 Optimization</span>
+              <span class="stack-badge">💹 ROI</span>
+            </div>
+            <ul class="bullets">
+              <li>Built a regression-based attribution and optimization workflow over multi-channel spend history.</li>
+              <li>Converted model outputs into KPI-aligned budget recommendations and scenario planning views.</li>
+            </ul>
+            <div class="featured-impact"><b>Impact:</b> Improved conversion performance by 17% with an estimated 12% ROI uplift.</div>
+            <div class="action-row">
+              <span class="btn disabled">GitHub Private</span>
+              <span class="btn disabled">Demo N/A</span>
+              <button class="btn secondary" type="button" onclick="openProject('eleckart')">Details</button>
+            </div>
+          </div>
+          <div class="featured-card">
+            <div class="featured-head">
+              <h3>UT Dashboard</h3>
+              <span class="tag">Featured</span>
+            </div>
+            <p class="problem-line">Problem: University operations teams needed reliable KPI visibility across large records without slow manual reporting loops.</p>
+            <div class="stack-icons">
+              <span class="stack-badge">📊 Power BI</span>
+              <span class="stack-badge">🏫 Enterprise Data</span>
+              <span class="stack-badge">📏 KPI Governance</span>
+              <span class="stack-badge">⏱️ Forecasting</span>
+            </div>
+            <ul class="bullets">
+              <li>Built 5+ enterprise Power BI dashboards across 50K+ operational records to strengthen KPI governance.</li>
+              <li>Added monitoring and forecasting layers to flag work-hour risk trends and improve operational visibility.</li>
+            </ul>
+            <div class="featured-impact"><b>Impact:</b> Improved KPI accuracy by 15% while reducing manual reporting effort at enterprise scale.</div>
+            <div class="action-row">
+              <span class="btn disabled">GitHub Private</span>
+              <span class="btn disabled">Demo N/A</span>
+              <button class="btn secondary" type="button" onclick="openProject('utdashboard')">Details</button>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="portfolio-group">
-        <div class="group-head">
-          <h3>Applied AI & Analytics</h3>
-          <p>Broader applied work that reinforces product thinking, technical breadth, and measurable business outcomes.</p>
-        </div>
-        <div class="grid">
-          <div class="proj" data-tags="analytics decision" onclick="openProject('eleckart')">
-            <div class="title">
-              <h3>ElecKart | Marketing Decision Optimization Engine</h3>
-              <span class="tag">Impact</span>
+      <div class="catalog-shell" id="allProjectsShell">
+        <button class="catalog-toggle" type="button" id="catalogToggle">
+          <span><b>Explore All Projects</b><br><span style="color:var(--muted); font-size:13px;">Expand to browse the rest of the portfolio without crowding the default homepage view.</span></span>
+          <span>+</span>
+        </button>
+        <div class="catalog-content" id="catalogContent">
+          <div class="catalog-inner">
+            <div class="catalog-toolbar">
+              <input class="search-input" type="search" id="projectSearch" placeholder="Search projects by title or keyword" />
+              <div class="chip-row" id="catalogFilters">
+                <button class="chip active" type="button" data-filter="all">All</button>
+                <button class="chip" type="button" data-filter="ai-ml">AI / ML</button>
+                <button class="chip" type="button" data-filter="data-analytics">Data Analytics</button>
+                <button class="chip" type="button" data-filter="nlp">NLP</button>
+                <button class="chip" type="button" data-filter="computer-vision">Computer Vision</button>
+                <button class="chip" type="button" data-filter="cloud">Cloud</button>
+              </div>
             </div>
-            <div class="stack mono">(Marketing Mix Modeling • Attribution • Budget Optimization • SQL)</div>
-            <ul class="bullets">
-              <li>Built attribution + optimization framework across multi-channel spend data.</li>
-              <li>Improved conversion performance by <b>17%</b>; projected ~<b>12%</b> ROI uplift.</li>
-              <li>Converted model outputs into KPI-aligned budget recommendations.</li>
-            </ul>
-            <div class="preview">Click to explore the modeling and scenario design choices.</div>
-          </div>
-
-          <div class="proj" data-tags="analytics ai" onclick="openProject('streaming')">
-            <div class="title">
-              <h3>Cloud-Based Streaming Pipeline</h3>
-              <span class="tag">Scale</span>
+            <div class="statline" id="projectCount">Showing 14 projects in the expanded catalog</div>
+            <div class="simple-grid" id="projectCatalog">
+              <div class="catalog-card" data-category="ai-ml" data-search="Hybrid LLM Evaluation Engine evaluation semantic scoring exploit detection">
+                <h3>Hybrid LLM Evaluation Engine</h3>
+                <p>Hybrid evaluation framework combining semantic scoring and deterministic checks for safer LLM assessment.</p>
+                <div class="action-row"><span class="btn disabled">GitHub Private</span><button class="btn secondary" type="button" onclick="openProject('hybrid')">Details</button></div>
+              </div>
+              <div class="catalog-card" data-category="ai-ml" data-search="AI Risk Intelligence Dashboard OWASP MITRE governance">
+                <h3>AI Risk Intelligence Dashboard</h3>
+                <p>Risk scoring and governance visibility for chatbots, RAG systems, and agentic AI workflows.</p>
+                <div class="action-row"><span class="btn disabled">GitHub Private</span><button class="btn secondary" type="button" onclick="openProject('airisk')">Details</button></div>
+              </div>
+              <div class="catalog-card" data-category="ai-ml" data-search="Decision Automation AI churn retention prescriptive analytics">
+                <h3>Decision Automation AI | Churn Action System</h3>
+                <p>Retention-focused churn prediction system that translates risk scores into business actions.</p>
+                <div class="action-row"><span class="btn disabled">GitHub Private</span><button class="btn secondary" type="button" onclick="openProject('churn')">Details</button></div>
+              </div>
+              <div class="catalog-card" data-category="data-analytics" data-search="Cloud-Based Streaming Pipeline realtime anomaly detection azure">
+                <h3>Cloud-Based Streaming Pipeline</h3>
+                <p>Real-time event pipeline for monitoring, anomaly detection, and cloud-scale analytics.</p>
+                <div class="action-row"><span class="btn disabled">GitHub Private</span><button class="btn secondary" type="button" onclick="openProject('streaming')">Details</button></div>
+              </div>
+              <div class="catalog-card" data-category="nlp" data-search="FIFA World Cup Sentiment Analysis BERT NLP">
+                <h3>FIFA World Cup Sentiment Analysis</h3>
+                <p>Transformer-based sentiment system for large-scale event and audience-reaction analysis.</p>
+                <div class="action-row"><span class="btn disabled">GitHub Private</span><button class="btn secondary" type="button" onclick="openProject('sentiment')">Details</button></div>
+              </div>
+              <div class="catalog-card" data-category="nlp" data-search="Real-Time Speech Translation System multimodal embeddings">
+                <h3>Real-Time Speech Translation System</h3>
+                <p>Multimodal AI pipeline connecting speech recognition, translation, and context refinement.</p>
+                <div class="action-row"><span class="btn disabled">GitHub Private</span><button class="btn secondary" type="button" onclick="openProject('speech')">Details</button></div>
+              </div>
+              <div class="catalog-card" data-category="data-analytics" data-search="Keyword Gap Analysis Engine SEO content strategy">
+                <h3>Keyword Gap Analysis Engine</h3>
+                <p>SEO analytics workflow for competitor benchmarking and opportunity prioritization.</p>
+                <div class="action-row"><span class="btn disabled">GitHub Private</span><button class="btn secondary" type="button" onclick="openProject('keyword')">Details</button></div>
+              </div>
+              <div class="catalog-card" data-category="nlp" data-search="NLP Text Summarization System summarization spacy textrank">
+                <h3>NLP Text Summarization System</h3>
+                <p>Summarization pipeline benchmarking extractive methods for concise, readable output.</p>
+                <div class="action-row"><span class="btn disabled">GitHub Private</span><button class="btn secondary" type="button" onclick="openProject('summarization')">Details</button></div>
+              </div>
+              <div class="catalog-card" data-category="data-analytics" data-search="Instacart Market Basket Analysis retail association rules">
+                <h3>Instacart Market Basket Analysis</h3>
+                <p>Retail affinity analysis to support bundling, cross-sell, and merchandising decisions.</p>
+                <div class="action-row"><span class="btn disabled">GitHub Private</span><button class="btn secondary" type="button" onclick="openProject('basket')">Details</button></div>
+              </div>
+              <div class="catalog-card" data-category="cloud" data-search="GeminiLLM NLP System bigquery cloud processing">
+                <h3>GeminiLLM NLP System</h3>
+                <p>Cloud-scale NLP processing workflow for warehouse-backed LLM-style text analysis.</p>
+                <div class="action-row"><span class="btn disabled">GitHub Private</span><button class="btn secondary" type="button" onclick="openProject('gemini')">Details</button></div>
+              </div>
+              <div class="catalog-card" data-category="ai-ml" data-search="Inventory Forecasting System time series demand planning">
+                <h3>Inventory Forecasting System</h3>
+                <p>Time-series forecasting project for inventory planning and operational decision support.</p>
+                <div class="action-row"><span class="btn disabled">GitHub Private</span><button class="btn secondary" type="button" onclick="openProject('inventory')">Details</button></div>
+              </div>
+              <div class="catalog-card" data-category="data-analytics" data-search="Data Center TCO cost modeling power bi">
+                <h3>Data Center TCO</h3>
+                <p>Scenario-based cost model comparing distributed and monolithic infrastructure strategies.</p>
+                <div class="action-row"><span class="btn disabled">GitHub Private</span><button class="btn secondary" type="button" onclick="openProject('tco')">Details</button></div>
+              </div>
+              <div class="catalog-card" data-category="data-analytics" data-search="E-Commerce Database Management System relational modeling sql">
+                <h3>E-Commerce Database Management System</h3>
+                <p>Foundational relational schema and transaction workflow project for e-commerce operations.</p>
+                <div class="action-row"><span class="btn disabled">GitHub Private</span><button class="btn secondary" type="button" onclick="openProject('dbms')">Details</button></div>
+              </div>
+              <div class="catalog-card" data-category="computer-vision" data-search="Fashion MNIST Image Classification cnn computer vision">
+                <h3>Fashion MNIST Image Classification</h3>
+                <p>Computer-vision project focused on CNN training, augmentation, and generalization.</p>
+                <div class="action-row"><span class="btn disabled">GitHub Private</span><button class="btn secondary" type="button" onclick="openProject('fashion')">Details</button></div>
+              </div>
             </div>
-            <div class="stack mono">(Streaming Data Engineering • Real-Time Monitoring • Anomaly Detection • Azure)</div>
-            <ul class="bullets">
-              <li>Engineered a real-time event pipeline processing <b>100K+</b> records for downstream monitoring and anomaly workflows.</li>
-              <li>Reduced anomaly detection latency by <b>30%</b> and improved data accuracy by <b>17%</b>.</li>
-              <li>Demonstrated cloud-scale ingestion, transformation, and decision-support readiness.</li>
-            </ul>
-            <div class="preview">Click to inspect the event flow and architecture decisions.</div>
-          </div>
-
-          <div class="proj" data-tags="ai analytics" onclick="openProject('sentiment')">
-            <div class="title">
-              <h3>FIFA World Cup Sentiment Analysis</h3>
-              <span class="tag">NLP</span>
-            </div>
-            <div class="stack mono">(Sentiment Analysis • NLP • BERT • Trend Detection)</div>
-            <ul class="bullets">
-              <li>Processed large-scale fan commentary to quantify sentiment by team, event, and tournament phase.</li>
-              <li>Used BERT-based sentiment classification to capture public reaction patterns beyond keyword rules.</li>
-              <li>Delivered trend views that surfaced shifts in engagement and perception in near real time.</li>
-            </ul>
-            <div class="preview">Click to review the NLP workflow and sentiment reporting design.</div>
-          </div>
-
-          <div class="proj" data-tags="ai analytics" onclick="openProject('speech')">
-            <div class="title">
-              <h3>Real-Time Speech Translation System</h3>
-              <span class="tag">Multimodal</span>
-            </div>
-            <div class="stack mono">(Speech Translation • Multimodal AI • Context-Aware NLP • Embeddings)</div>
-            <ul class="bullets">
-              <li>Connected speech recognition, translation, and text-to-speech into a real-time multilingual pipeline.</li>
-              <li>Added embedding-based context refinement to improve meaning preservation across turns.</li>
-              <li>Demonstrated end-to-end multimodal AI system design for live communication workflows.</li>
-            </ul>
-            <div class="preview">Click to inspect the speech pipeline and context-handling logic.</div>
-          </div>
-
-          <div class="proj" data-tags="analytics decision" onclick="openProject('keyword')">
-            <div class="title">
-              <h3>Keyword Gap Analysis Engine</h3>
-              <span class="tag">Growth</span>
-            </div>
-            <div class="stack mono">(SEO Analytics • Competitive Intelligence • Keyword Mapping • Content Strategy)</div>
-            <ul class="bullets">
-              <li>Built a competitor benchmarking workflow to identify high-value keyword gaps and ranking opportunities.</li>
-              <li>Grouped missing opportunities into content clusters to prioritize SEO execution.</li>
-              <li>Produced an action roadmap that connected search data to traffic-growth decisions.</li>
-            </ul>
-            <div class="preview">Click to see the comparison logic and opportunity clustering approach.</div>
-          </div>
-
-          <div class="proj" data-tags="ai analytics" onclick="openProject('summarization')">
-            <div class="title">
-              <h3>NLP Text Summarization System</h3>
-              <span class="tag">NLP</span>
-            </div>
-            <div class="stack mono">(Text Summarization • NLP Evaluation • Compression • spaCy)</div>
-            <ul class="bullets">
-              <li>Built an automated summarization pipeline for long-form text and news-style content.</li>
-              <li>Compared extractive approaches across readability, compression, and information retention.</li>
-              <li>Created an evaluation workflow to benchmark summary quality across methods.</li>
-            </ul>
-            <div class="preview">Click to review the summarization methods and evaluation design.</div>
-          </div>
-
-          <div class="proj" data-tags="analytics decision" onclick="openProject('basket')">
-            <div class="title">
-              <h3>Instacart Market Basket Analysis</h3>
-              <span class="tag">Retail</span>
-            </div>
-            <div class="stack mono">(Market Basket Analysis • Association Rules • Cross-Sell • Retail Analytics)</div>
-            <ul class="bullets">
-              <li>Analyzed co-purchase behavior to identify product affinities and bundling opportunities.</li>
-              <li>Used association rules and clustering to support cross-sell strategy recommendations.</li>
-              <li>Translated basket patterns into merchandising and promotion insights.</li>
-            </ul>
-            <div class="preview">Click to view the affinity logic and recommendation framing.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="portfolio-group">
-        <div class="group-head">
-          <h3>Foundations & Supporting Work</h3>
-          <p>Supporting work that rounds out the portfolio without competing with the strongest recruiter-facing projects.</p>
-        </div>
-        <div class="grid">
-          <div class="proj" data-tags="ai analytics" onclick="openProject('gemini')">
-            <div class="title">
-              <h3>GeminiLLM NLP System</h3>
-              <span class="tag">LLM</span>
-            </div>
-            <div class="stack mono">(LLM Pipelines • Scalable NLP • Cloud Processing • BigQuery)</div>
-            <ul class="bullets">
-              <li>Designed a scalable NLP inference workflow over large datasets using cloud-native processing.</li>
-              <li>Connected LLM-based text analysis to warehouse-scale data operations.</li>
-              <li>Demonstrated practical large-volume AI processing beyond notebook prototypes.</li>
-            </ul>
-            <div class="preview">Click to see the cloud workflow and large-dataset processing setup.</div>
-          </div>
-
-          <div class="proj" data-tags="analytics decision" onclick="openProject('inventory')">
-            <div class="title">
-              <h3>Inventory Forecasting System</h3>
-              <span class="tag">Forecasting</span>
-            </div>
-            <div class="stack mono">(Demand Forecasting • Time-Series Modeling • Inventory Planning • Python)</div>
-            <ul class="bullets">
-              <li>Built demand forecasting models to support inventory planning and stock-level decisions.</li>
-              <li>Applied time-series methods to estimate future demand under changing business conditions.</li>
-              <li>Used forecast outputs to inform operational planning and reduce uncertainty.</li>
-            </ul>
-            <div class="preview">Click to review the forecasting methods and planning use case.</div>
-          </div>
-
-          <div class="proj" data-tags="analytics decision" onclick="openProject('tco')">
-            <div class="title">
-              <h3>Data Center TCO | Distributed vs Monolithic Cost Modeling</h3>
-              <span class="tag">Decision Model</span>
-            </div>
-            <div class="stack mono">(Cost Modeling • TCO Analysis • Scenario Planning • Power BI)</div>
-            <ul class="bullets">
-              <li>Modeled total cost of ownership across cities and operating scenarios.</li>
-              <li>Built executive dashboards to compare cost drivers and savings levers.</li>
-              <li>Packaged findings into decision-ready recommendations.</li>
-            </ul>
-            <div class="preview">Click to inspect the scenario framing and trade-off analysis.</div>
-          </div>
-
-          <div class="proj" data-tags="analytics" onclick="openProject('dbms')">
-            <div class="title">
-              <h3>E-Commerce Database Management System</h3>
-              <span class="tag">Data Model</span>
-            </div>
-            <div class="stack mono">(Database Design • Relational Modeling • Backend Logic • SQL)</div>
-            <ul class="bullets">
-              <li>Designed a relational system to manage products, availability, orders, and delivery timelines.</li>
-              <li>Modeled core entities and workflows to support reliable e-commerce operations.</li>
-              <li>Demonstrated backend and schema-design fundamentals that support analytics later on.</li>
-            </ul>
-            <div class="preview">Click to inspect the schema logic and operational workflow coverage.</div>
-          </div>
-
-          <div class="proj" data-tags="ai analytics" onclick="openProject('fashion')">
-            <div class="title">
-              <h3>Fashion MNIST Image Classification</h3>
-              <span class="tag">CV</span>
-            </div>
-            <div class="stack mono">(Computer Vision • Image Classification • CNNs • Generalization)</div>
-          <ul class="bullets">
-              <li>Built a convolutional image classifier for apparel recognition using Fashion MNIST.</li>
-              <li>Improved generalization through augmentation and regularization strategies.</li>
-              <li>Showed strong computer-vision fundamentals in model training and evaluation.</li>
-            </ul>
-            <div class="preview">Click to open the modeling notes and accuracy-improvement choices.</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- BEST AT -->
+    <!-- RECRUITER SUMMARY -->
     <div class="section" id="bestat">
-      <h2>What I'm Best At</h2>
+      <h2>What Recruiters Should Know Fast</h2>
       <div class="card">
         <div class="best-list">
           <div class="best-item">
-            <b>AI decision systems that drive action</b>
-            I build analytics products that go beyond reporting, combining modeling, dashboards, and recommendation logic so teams can act on the output.
+            <b>Decision systems, not just reporting</b>
+            I build analytics products that combine dashboards, models, and next-step logic so teams can move from signal to action quickly.
           </div>
           <div class="best-item">
-            <b>LLM, RAG, and AI safety evaluation</b>
-            I design structured evaluation workflows for prompt injection, retrieval abuse, agent misuse, and model-risk visibility instead of relying on surface-level demos.
+            <b>Agentic AI with safety and structure</b>
+            I design agentic workflows, RAG-aware tooling, and evaluation layers that make AI systems more grounded, reviewable, and trustworthy.
           </div>
           <div class="best-item">
-            <b>Business translation with technical credibility</b>
-            I connect data pipelines, metrics, and model behavior to decisions leaders actually care about, without losing technical rigor underneath.
+            <b>Business translation with technical depth</b>
+            I connect data pipelines, KPIs, and model behavior to decisions leaders actually care about without losing engineering rigor underneath.
           </div>
         </div>
         <div class="line"></div>
@@ -1128,7 +1288,7 @@
         </div>
         <div class="contact-actions">
           <button class="btn" type="button" id="copyEmailBtn">Copy Email</button>
-          <button class="btn" type="button" onclick="document.getElementById('featured').scrollIntoView({behavior:'smooth'});">Jump to Projects</button>
+          <button class="btn" type="button" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'});">Jump to Projects</button>
         </div>
         <div class="note" id="contactNote"></div>
         <div class="line"></div>
@@ -1155,19 +1315,30 @@
   <script>
     const PROJECTS = {
       cryptoagent: {
-        title: "Crypto Intelligence Agent",
-        stack: ["Agentic Web App","LLM Tool Calling","MCP-Style Wrapper","FastAPI","Streamlit","Local Ollama","CoinGecko API","Dashboard Visualization","Explainability"],
-        summary: "A local-first crypto intelligence application that combines LLM tool-calling, a wrapper microservice, and a lightweight dashboard to support grounded market exploration.",
+        title: "Crypto Intelligence Agent (Agentic AI Workflow)",
+        stack: ["Python","APIs","LLM Orchestration","MCP-Style Wrapper","FastAPI","Streamlit","Ollama","Dashboard Visualization"],
+        summary: "An agentic crypto intelligence workflow that ingests live market data, routes it through an LLM reasoning layer, and returns structured decision-support insights through chat and dashboard views.",
         bullets: [
-          "Designed a three-layer architecture with a Streamlit frontend, FastAPI agent backend, and FastAPI MCP-style wrapper that normalizes third-party crypto market data.",
-          "Implemented tool-driven flows for price lookup, asset comparison, trending coins, market summary, and exploratory prompts while preventing live-data hallucination.",
-          "Added short-term caching, timeout controls, and normalized rate-limit handling so the app stays demo-resilient under free API constraints.",
-          "Built a decision-support dashboard with comparison cards, top-mover views, daily candlestick charts, and execution-trace visibility for safer interpretability."
+          "Solved the problem of fragmented, noisy crypto data by building a multi-step workflow with ingestion, reasoning, and output layers.",
+          "Used a FastAPI agent backend plus an MCP-style wrapper to normalize third-party API data before the LLM touched it.",
+          "Implemented tool-driven flows for price lookup, comparison, trending assets, and market summary while preventing live-data hallucination.",
+          "Added short-term caching, timeout controls, and normalized rate-limit handling so the app stays demo-resilient under free API constraints."
         ],
         links: [
           { label: "GitHub Repo", url: "https://github.com/Utkarshm1/Crypto-intelligence-agent" },
           { label: "Demo Video", url: "https://github.com/Utkarshm1/Crypto-intelligence-agent/blob/main/docs/demo/crypto-intelligence-agent-demo.mp4" }
         ]
+      },
+      utdashboard: {
+        title: "UT Dashboard | Enterprise KPI Monitoring",
+        stack: ["Power BI","KPI Governance","Forecasting","Operational Analytics","Enterprise Reporting"],
+        summary: "An enterprise dashboarding and KPI-monitoring workflow built during my University of Texas System internship to make large operational datasets faster to interpret and act on.",
+        bullets: [
+          "Architected and deployed 5+ Power BI dashboards across 50K+ operational records to improve KPI visibility and reporting consistency.",
+          "Built forecasting and threshold-monitoring views that helped surface work-hour risk trends before they became operational bottlenecks.",
+          "Structured reporting logic to reduce manual reporting effort and improve trust in recurring metrics."
+        ],
+        links: []
       },
       dashai: {
         title: "DashAI | AI-Enabled Decision Intelligence Platform",
@@ -1483,24 +1654,55 @@
       backdrop.setAttribute("aria-hidden","true");
     }
 
-    function setProjectFilter(filter){
-      const buttons = document.querySelectorAll("#projectFilters .chip");
-      const cards = document.querySelectorAll(".proj");
-      let visibleCount = 0;
+    function setupCatalog(){
+      const shell = document.getElementById("allProjectsShell");
+      const toggle = document.getElementById("catalogToggle");
+      const content = document.getElementById("catalogContent");
+      const search = document.getElementById("projectSearch");
+      const buttons = document.querySelectorAll("#catalogFilters .chip");
+      const cards = document.querySelectorAll(".catalog-card");
+      const count = document.getElementById("projectCount");
+      let activeFilter = "all";
+
+      function applyCatalogFilters(){
+        const query = (search.value || "").trim().toLowerCase();
+        let visibleCount = 0;
+        cards.forEach((card) => {
+          const matchesFilter = activeFilter === "all" || card.dataset.category === activeFilter;
+          const haystack = (card.dataset.search || "").toLowerCase();
+          const matchesSearch = !query || haystack.includes(query);
+          const visible = matchesFilter && matchesSearch;
+          card.hidden = !visible;
+          if(visible) visibleCount += 1;
+        });
+        const label = visibleCount === 1 ? "project" : "projects";
+        count.textContent = `Showing ${visibleCount} ${label} in the expanded catalog`;
+      }
+
+      toggle.addEventListener("click", () => {
+        const isOpen = shell.classList.toggle("open");
+        content.style.maxHeight = isOpen ? `${content.scrollHeight + 24}px` : "0px";
+      });
 
       buttons.forEach((button) => {
-        button.classList.toggle("active", button.dataset.filter === filter);
+        button.addEventListener("click", () => {
+          activeFilter = button.dataset.filter;
+          buttons.forEach((entry) => entry.classList.toggle("active", entry === button));
+          applyCatalogFilters();
+          if(shell.classList.contains("open")){
+            content.style.maxHeight = `${content.scrollHeight + 24}px`;
+          }
+        });
       });
 
-      cards.forEach((card) => {
-        const tags = (card.dataset.tags || "").split(" ");
-        const matches = filter === "all" || tags.includes(filter);
-        card.hidden = !matches;
-        if(matches) visibleCount += 1;
+      search.addEventListener("input", () => {
+        applyCatalogFilters();
+        if(shell.classList.contains("open")){
+          content.style.maxHeight = `${content.scrollHeight + 24}px`;
+        }
       });
 
-      const label = visibleCount === 1 ? "portfolio system" : "portfolio systems";
-      document.getElementById("projectCount").textContent = `Showing ${visibleCount} ${label}`;
+      applyCatalogFilters();
     }
 
     function setupExperienceToggles(){
@@ -1542,13 +1744,10 @@
       if(e.key === "Escape") closeModal();
     });
 
-    document.querySelectorAll("#projectFilters .chip").forEach((button) => {
-      button.addEventListener("click", () => setProjectFilter(button.dataset.filter));
-    });
     document.getElementById("copyEmailBtn").addEventListener("click", copyEmail);
     setupExperienceToggles();
     setupSkillCards();
-    setProjectFilter("all");
+    setupCatalog();
     document.getElementById("yr").textContent = new Date().getFullYear();
   </script>
 </body>
